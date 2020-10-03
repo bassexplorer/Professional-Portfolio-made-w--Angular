@@ -1,0 +1,80 @@
+<main class="home-container"
+	  [@HomePage]>
+
+	<div class="left-side">
+
+		<h1 class="text-nowrap">Hi, my name is <span>Ben.</span></h1>
+
+		<div class="intro-box">
+
+			<h3>I enjoy many things in life, but at the end of the day my real desire is to build. Build something that
+				makes
+				tomorrow a better places.<span class="blinking">_</span>
+			</h3>
+			<div class="title-of-me">Front End Developer</div>
+
+			<div class="cta-btn-box">
+
+				<a mat-raised-button
+				   type="button"
+				   class="text-decoration-none"
+				   color='secondary'
+				   [routerLink]="[ '/projects' ]"
+				   routerLinkActive="active">My Projects</a>
+
+				<a mat-raised-button
+				   type="button"
+				   color='accent'
+				   class="text-decoration-none"
+				   [routerLink]="[ '/profile' ]"
+				   routerLinkActive="active">Read about Me</a>
+
+			</div>
+
+
+
+			<div class="social-box">
+				<a mat-icon-button
+				   matTooltip="Professional LinkedIn"
+				   matTooltipPosition="above"
+				   matTooltipHideDelay="100"
+				   href="https://www.linkedin.com/in/mark-bence-kiss/"
+				   target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a mat-icon-button
+				   matTooltip="Personal Stuffs"
+				   matTooltipPosition="above"
+				   matTooltipHideDelay="100"
+				   href="https://www.instagram.com/bassexplorer.beni/"
+				   target="_blank"><i class="fab fa-instagram"></i></a>
+				<a mat-icon-button
+				   matTooltip="My Code Projects"
+				   matTooltipPosition="above"
+				   matTooltipHideDelay="100"
+				   href="https://github.com/bassexplorer"
+				   target="_blank"><i class="fab fa-github"></i></a>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="right-side d-flex align-items-end">
+
+		<!-- <div class="d-flex w-100 justify-content-end align-self-start">
+			<img src="../../assets/images/circle.svg"
+				 id="circle-svg"
+				 class="img-fluid w-100 mb-5"
+				 alt="">
+		</div> -->
+
+		<div class="d-flex align-items-end justify-content-center">
+			<img class="image-of-me img-fluid"
+				 src="../../assets/images/me.png"
+				 alt="An image of Mark Bence Kiss"
+				 draggable="false">
+		</div>
+
+		<div class="circle-clip-path w-100 h-100" id="circle-svg"></div>
+	</div>
+
+
+</main>
