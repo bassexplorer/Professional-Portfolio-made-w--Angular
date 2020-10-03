@@ -1,0 +1,14 @@
+<div class="copyright d-inline-flex align-items-center mx-auto text-center">
+	<p class="text-center">
+		Copyright © 2020 Mark Bence Kiss. All rights reserved. |
+		<a mat-button
+		   matTooltip="Click to Copy"
+		   matTooltipPosition="above"
+		   matTooltipHideDelay="100"
+		   (click)="copyEmail($event)">info@markbencekiss.com
+
+			<span class="copyNotif py-1 px-2 rounded"
+				  *ngIf="isCopiedSwitch"> Copied to clipboard! </span>
+		</a>
+	</p>
+</div>
