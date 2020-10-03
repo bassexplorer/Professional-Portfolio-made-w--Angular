@@ -1,0 +1,53 @@
+<mat-drawer-container class="menu-drawer-container">
+	<mat-drawer #drawer
+				class="menu-drawer"
+				mode="push"
+				position='end'>
+
+
+		<div class="menu-container text-muted">
+
+			<h2>Menu</h2>
+			<mat-divider color="primary"></mat-divider>
+
+			<div class="d-flex flex-column">
+
+				<a class="nav_link"
+				   mat-button
+				   routerLinkActive="active"
+				   routerLinkActive="active"
+				   [routerLinkActiveOptions]="{exact: true}"
+				   routerLink='/'>Home</a>
+
+				<a class="nav_link"
+				   mat-button
+				   routerLinkActive="active"
+				   routerLink='/profile'> Profile</a>
+
+				<a class="nav_link"
+				   mat-button
+				   routerLinkActive="active"
+				   routerLink='/profile/skills'> Skills & Tools</a>
+
+				<a class="nav_link"
+				   mat-button
+				   routerLinkActive="active"
+				   routerLink='/projects'>Projects</a>
+
+				<a class="contact-btn-style"
+				   mat-button
+				   routerLinkActive="active"
+				   routerLink='/contact'>Contact</a>
+
+				<div class="overflow-hidden">
+					<span class="mode-indicator pr-3">Dark Mode</span>
+					<mat-slide-toggle appDarkModeSwitch></mat-slide-toggle>
+				</div>
+			</div>
+
+
+		</div>
+	</mat-drawer>
+
+
+</mat-drawer-container>

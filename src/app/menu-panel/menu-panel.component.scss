@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.menu-drawer-container {
+    position: absolute;
+	z-index: 2;
+	top: 4rem;
+    width: 100%;
+    height: calc(100vh - 4rem);
+ 	background-color: transparent;
+
+
+    .menu-drawer-content {
+        display: flex;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-drawer {
+        padding: 4rem;
+        // background-color: #2b0000d7;
+        background-color: #141414e8;
+    }
+
+    &:not(.mat-drawer-container-has-open) {
+        visibility: hidden;
+    }
+
+    .menu-container {
+        // width: 30vw;
+
+        .mat-form-field+.mat-form-field {
+            margin-left: 8px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: map-get($main-colors, 'light');
+        }
+
+        .mat-divider {
+            border-top-color: map-get($main-colors, 'light');
+        }
+
+    }
+
+
+}
