@@ -1,0 +1,32 @@
+<div ScrollFollow [@showSocials]
+	 [divElement]="section2"
+	 class="navigation-box d-flex flex-row-reverse">
+
+	<a mat-button
+	   *ngIf="scrollBoxON"
+	   class="navigator-btn">
+		<span class="scroll-title down-arrow"
+			  #scrollTxt> Scroll Down</span>
+	</a>
+
+	<div class="social-box">
+		<a mat-icon-button
+		   matTooltip="Professional LinkedIn"
+		   matTooltipPosition="left"
+		   matTooltipHideDelay="100"
+		   href="https://www.linkedin.com/in/mark-bence-kiss/"
+		   target="_blank"><i class="fab fa-linkedin"></i></a>
+		<a mat-icon-button
+		   matTooltip="Personal Stuffs"
+		   matTooltipPosition="left"
+		   matTooltipHideDelay="100"
+		   href="https://www.instagram.com/bassexplorer.beni/"
+		   target="_blank"><i class="fab fa-instagram"></i></a>
+		<a mat-icon-button
+		   matTooltip="My Code Projects"
+		   matTooltipPosition="left"
+		   matTooltipHideDelay="100"
+		   href="https://github.com/bassexplorer"
+		   target="_blank"><i class="fab fa-github"></i></a>
+	</div>
+</div>
