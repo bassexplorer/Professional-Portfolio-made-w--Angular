@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import '_reset';
+@import '_variables';
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+html,
+body,
+main {
+    height: 100%;
+	width: 100%;
+	scroll-behavior: smooth;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    box-sizing: border-box;
+    font-size: calc(1vw - .2rem);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    // height: calc(100% - 4rem);
+}
+
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: .6vw;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: .8vw;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 1vw;
+    }
+}

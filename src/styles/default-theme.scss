@@ -1,0 +1,263 @@
+@import '~@angular/material/theming';
+@import '_variables';
+@include mat-core();
+
+
+
+@mixin html-theme($theme) {
+    & {
+        $background: map-get($theme, background);
+        $foreground: map-get($theme, foreground);
+
+        background-color: darken(mat-color($background, background), 10);
+        color: mat-color($foreground, text);
+
+        // other html element styling here
+    }
+}
+
+
+
+
+// light (default) theme
+.light-theme {
+    $light-primary: mat-palette($gray-palette);
+    $light-accent: mat-palette($red-palette);
+
+    $light-theme: mat-light-theme($light-primary, $light-accent);
+
+
+    @include angular-material-theme($light-theme);
+
+
+
+    @at-root body.light-theme,
+    .light-theme .aligning-bg-n-text {
+        @include html-theme($light-theme);
+    }
+
+
+
+    transition: ease-in .5s background,
+    ease-in .5s color;
+}
+
+// alternate dark theme
+.dark-theme {
+    $dark-primary: mat-palette($gray-palette);
+    $dark-accent: mat-palette($red-palette);
+    $dark-warn: mat-palette($red-palette);
+
+
+    $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+    @include angular-material-theme($dark-theme);
+
+
+    @at-root body.dark-theme,
+    .dark-theme .aligning-bg-n-text {
+        @include html-theme($dark-theme);
+    }
+
+    transition: ease-in .5s background,
+    ease-in .5s color;
+
+}
+
+body {
+
+
+
+    &.dark-theme ::selection {
+        color: white;
+        background: #7e0000a8;
+    }
+
+    &.light-theme ::selection {
+        color: white;
+        background: #646464;
+    }
+
+
+
+    .menu-drawer-container {
+        .mat-drawer-backdrop.mat-drawer-shown {
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    &.dark-theme .profile-container .section1 .text-box .signiture {
+        filter: invert(1);
+    }
+
+    .navigator-btn span.mat-button-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    // left side color fix
+    &.dark-theme .left-side h1 {
+        filter: invert(1) brightness(0.73);
+        transition: filter .5s ease-in;
+    }
+
+    &.light-theme.left-side h1 {
+        filter: none;
+        transition: filter .5s ease-in;
+    }
+
+    // particles change
+    &.dark-theme #tsparticles {
+        filter: invert(1) grayscale(1);
+        transition: .5s linear filter;
+    }
+
+    &.light-theme #tsparticles {
+        // filter: contrast(100);
+        transition: .5s linear filter;
+    }
+
+    // logo change
+    &.dark-theme #logo-svg {
+
+        .st0 {
+            fill: #C1C1C1 !important;
+            transition: ease-in-out all .5s;
+        }
+    }
+
+    &.light-theme #logo-svg {
+
+        .st0 {
+            fill: #646464 !important;
+            transition: ease-in-out all .5s;
+
+        }
+    }
+
+
+    // toolbar color change
+    &.dark-theme mat-toolbar.mat-toolbar {
+        &.mat-accent {
+            background-color: transparent;
+            color: map-get($main-colors, 'light');
+            transition: .5s all ease-in-out;
+
+
+            &.scrolled {
+                background-color: map-get($main-colors, 'dark');
+                box-shadow: 0px 0px 4px 1px #00000040;
+            }
+        }
+
+        a.nav_link {
+            &::before {
+                border-top: 1px solid map-get($main-colors, 'light');
+                border-right: 1px solid map-get($main-colors, 'light');
+
+            }
+
+            &:after {
+                border-bottom: 1px solid map-get($main-colors, 'light');
+                border-left: 1px solid map-get($main-colors, 'light');
+
+
+            }
+        }
+    }
+
+    &.light-theme .mat-toolbar {
+
+        &.mat-accent {
+            background-color: transparent;
+            color: map-get($main-colors, 'dark');
+            transition: .5s all ease-in-out;
+
+            &.scrolled {
+                background-color: #e1e1e1;
+				box-shadow: 0px 0px 1px 1px #00000040,
+							0px 0px 2px 1px #00000040,
+							0px 0px 4px 1px #00000040;
+            }
+        }
+
+
+        .contact-btn-style {
+            border: 1px solid map-get($main-colors, 'dark');
+            border-radius: 0;
+        }
+    }
+
+    // PARCITLES SHADOW MUSH
+    &.light-theme .particles-shadow {
+        box-shadow: 0px 0px 3rem 3rem map-get($main-colors, 'light');
+    }
+
+    &.dark-theme .particles-shadow {
+
+        box-shadow: 0px 0px 32px 32px #171717;
+    }
+
+    // TOOLTIP COLORING
+    &.light-theme .mat-tooltip {
+        color: #2c2c2c;
+        background: #e9e9e9;
+    }
+
+
+    &.dark-theme .mat-tooltip {
+        color: #ffffff;
+        background: #440000;
+    }
+
+    .mat-tooltip {
+        font-size: inherit;
+        font-weight: 100;
+    }
+
+    // FORM FIELDS
+    &.dark-theme .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: rgb(255 255 255 / 4%);
+    }
+
+
+    // SLIDE TOGGLE ALIGNING IN THE RIGHT SPOT
+    mat-slide-toggle {
+
+        & .mat-slide-toggle-ripple .mat-ripple-element:nth-child(2) {
+            left: 0 !important;
+            top: 0 !important;
+        }
+
+
+    }
+
+
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.10);
+    width: 5px;
+    padding: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: transparent;
+    transition: .5s ease-in-out all;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #919191;
+    border: 5px solid transparent;
+    border-radius: 15px;
+    background-clip: content-box;
+
+    &:hover {
+        border: 4px solid transparent;
+        border-radius: 15px;
+        background-clip: content-box;
+    }
+}
