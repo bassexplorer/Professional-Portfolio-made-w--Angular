@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 865.6" style="enable-background:new 0 0 1920 865.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#440909;}
+	.st1{filter:url(#Subtraction_8);}
+	.st2{fill:#500909;}
+</style>
+<filter  filterUnits="userSpaceOnUse" height="705.816" id="Subtraction_8" width="1938.001" x="0" y="0">
+	<feOffset  dy="3" input="SourceAlpha"></feOffset>
+	<feGaussianBlur  result="blur" stdDeviation="3"></feGaussianBlur>
+	<feFlood  flood-opacity="0.161"></feFlood>
+	<feComposite  in2="blur" operator="in"></feComposite>
+	<feComposite  in="SourceGraphic" operator="over"></feComposite>
+</filter>
+<g id="Group_168" transform="translate(9.001 -135.043)">
+	<path id="Subtraction_9" class="st0" d="M1911,1000.6L1911,1000.6L-9,627.4v-162l1920,373.2V1000.6L1911,1000.6z"/>
+	<g transform="matrix(1, 0, 0, 1, -9, 135.04)" class="st1">
+		<path id="Subtraction_8-2_1_" class="st2" d="M0,693.8V310.1L1920,6v383.7L0,693.8z"/>
+	</g>
+</g>
+</svg>
