@@ -1,0 +1,36 @@
+h1 {
+	font-size: 3.8vw;
+	line-height: normal;
+	font-weight: 900;
+}
+
+p {
+	text-indent: 2vw;
+	font-size: 1vw;
+	font-weight: lighter;
+	line-height: normal;
+}
+
+
+.projects-page{
+	background-image: url('../../assets/images/projects-bg5.svg');
+	width: 100%;
+	height: 100%;
+	background-position: center 4rem;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+
+}
+
+.break {
+	flex-basis: 100%;
+	height: 0;
+  }
+
+  .img-fluid{
+	  width: 25vw;
+	  height: auto;
+  }
+
+
