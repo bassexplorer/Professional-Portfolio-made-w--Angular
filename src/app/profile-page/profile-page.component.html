@@ -1,0 +1,13 @@
+<div class="profile-container">
+	<!-- <div #section11 >
+			<app-about-me></app-about-me>
+		</div>
+
+		<div #section21>
+			<app-skills-tools></app-skills-tools>
+		</div> -->
+	<div [@routerTransition]="getState(outlet)">
+		<router-outlet #outlet="outlet"></router-outlet>
+	</div>
+	<!-- <app-scroll-box [section2]='section21'></app-scroll-box> -->
+</div>
