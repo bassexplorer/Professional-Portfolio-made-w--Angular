@@ -7,23 +7,26 @@
 }
 
 .section2 {
-    // height: 100vh;
+    @media (max-width: 576px) {
+        .main-content {
+            height: auto !important;
+        }
+    }
 
-    .main-content {
+    &.onIpad {
 
-        // & .onIpad {
+        .text-box {
+            // p {
+            //     font-size: larger;
+            // }
 
+            @media (max-width: 576px) {
+                h1 {
+                    font-size: xx-large;
+                }
+            }
 
-        //     // &.text-box {}
+        }
 
-        //     // @media (max-width: 375px) {
-        //     // 	body {
-        //     // 		font-size: 2rem;
-
-        //     // 	}
-        //     //   }
-
-
-        // }
     }
 }
