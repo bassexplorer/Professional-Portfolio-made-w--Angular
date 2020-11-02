@@ -1,10 +1,10 @@
 <!-- <div class="section1 d-flex flex-column justify-content-center" cdkDrag cdkDragLockAxis="y" #dragRef='cdkDrag'> -->
-<div class="section1 d-flex flex-column justify-content-center"
+<div class="section1 d-flex flex-column justify-content-center bg-transparent"
 	 [ngClass]="{'onIpad': breakpointObs$ | async}">
-	<div class="row justify-content-around h-100 align-items-center mt-5">
+	<div class="row justify-content-around h-100 align-items-center pasz">
 
-		<div class="text-box p-5 col-12 col-sm-8 col-xl-5">
-			<h1 class="h1">A couple of things about me...</h1>
+		<div class="text-box px-5 px-lg-5 pb-lg-2 pb-2 pt-5 col-12 col-sm-10 col-xl-5 mt-5 mt-xl-0">
+			<h1>A couple of things about me...</h1>
 
 			<p> I'm from Hungary and recently living in Aalborg studying multimedia design at UCN (University
 				College of
@@ -30,15 +30,17 @@
 				goals and try to achieve the best result I can. I like challenges and be the man who solve them.</p>
 
 
-			<div class="row justify-content-between align-items-center">
+			<div class="row justify-content-lg-between justify-content-center align-items-center">
 
 				<div class="col-12 col-sm-4 col-lg-4 col-xl-4">
 					<a mat-raised-button
-					   class="text-decoration-none"
+					   href="../../../assets/my_cv.pdf"
+					   download="Mark_Bence_Kiss_2020_CV_FrontEndDeveloper"
+					   class="text-decoration-none h-100 cta-btn"
 					   color="accent">Download my CV</a>
 				</div>
 
-				<div class="col-12 col-sm-6 col-lg-6 col-xl-6 d-flex h-100">
+				<div class="col-10 col-sm-6 col-lg-6 col-xl-6 d-flex h-100">
 
 					<img class="signiture img-fluid mt-4"
 						 src="../../../assets/images/mark_bence_kiss.svg"
@@ -49,16 +51,15 @@
 		</div>
 
 		<div class="image-box col-12 col-sm-8 col-xl-5 d-none d-lg-flex d-xl-flex w-100">
-			<img src="../../../assets/images/new-me-new-blob2.svg"
-				 alt="svg graphics about me">
+			<img src="../../../assets/images/blob-with-text-and-me.svg"
+				 alt="I am with a blob in the background" class="d-xl-block d-md-none d-none">
 
+			<img src="../../../assets/images/blob-with-text-and-me-noarrow.svg"
+				 alt="I am with a blob in the background" class="d-xl-none d-md-block d-block">
 		</div>
 
 	</div>
 
-	<div class="copyright mt-auto mx-auto"
-		 [ngClass]="{'visible': visibleCopyright}">
-		<app-copyright></app-copyright>
-	</div>
+	<app-copyright class="mt-auto mx-auto"></app-copyright>
 
 </div>
