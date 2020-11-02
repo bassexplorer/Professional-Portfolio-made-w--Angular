@@ -18,12 +18,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AboutMeComponent } from './profile-page/about-me/about-me.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { SkillsToolsComponent } from './profile-page/skills-tools/skills-tools.component';
+import { ProjectCardComponent } from './projects-page/project-card/project-card.component';
+import { ProjectCaseComponent } from './projects-page/project-case/project-case.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { CopyrightComponent } from './shared/copyright/copyright.component';
 import { MaterialModule } from './shared/material.module';
 import { ScrollBoxComponent } from './shared/scroll-box/scroll-box.component';
 import { ScrollFollowerDirective } from './shared/scroll-follower.directive';
 import { TooltipDirective } from './shared/tooltip.directive';
+
 
 
 @NgModule({
@@ -43,6 +46,8 @@ import { TooltipDirective } from './shared/tooltip.directive';
 		ScrollBoxComponent,
 		SkillsToolsComponent,
 		CopyrightComponent,
+		ProjectCardComponent,
+		ProjectCaseComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -1,4 +1,4 @@
-import { animate, animateChild, group, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 
 export const routerTransition =
 	trigger('routerTransition', [
@@ -18,10 +18,7 @@ export const routerTransition =
 
 					query('.main-content h1, .main-content .par ', [
 						style({ transform: 'translateX(100%)', opacity: 0 }),
-						stagger(
-							200,
 							animate('1s cubic-bezier(0,1,.96,.98)', style({ opacity: 1, transform: 'translateX(0%)' }))
-						)
 					]),
 
 					query('#tsparticles', [
@@ -87,7 +84,7 @@ export const routerTransition =
 			])
 		]),
 
-		//-------------------------------------------
+		// -------------------------------------------
 
 		transition('* => contact', [
 
@@ -147,9 +144,9 @@ export const routerTransition =
 			, { optional: true }),
 
 
-			query('.projects-page h1, .projects-page .p-3  ', [
+			query('.projects-page h1, .projects-page .m-3  ', [
 				style({ transform: 'translateY(-50%)', opacity: 0 }),
-			]),
+			], { optional: true }),
 
 			query(':enter', [
 
@@ -159,14 +156,14 @@ export const routerTransition =
 					)
 				]),
 
-				query('.projects-page .p-3 ', [
+				query('.projects-page .m-3 ', [
 					stagger(150,
 						animate('.5s cubic-bezier(0, 0.500, 0.500, 1)', keyframes([
 							style({ transform: 'translateY(0%)', opacity: 1 })
 						]))
 
 					)
-				])
+				], { optional: true })
 
 
 
@@ -181,6 +178,6 @@ export const routerTransition =
 		]),
 
 
-		//-------------------------------------------
+		// -------------------------------------------
 	]);
 

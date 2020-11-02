@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AboutMeComponent } from './profile-page/about-me/about-me.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { SkillsToolsComponent } from './profile-page/skills-tools/skills-tools.component';
+import { ProjectCaseComponent } from './projects-page/project-case/project-case.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 
 
@@ -22,7 +23,10 @@ const routes: Routes = [
 
 		], data: { state: 'profile', pageTitle: 'About Me' }
 	},
-	{ path: 'projects', component: ProjectsPageComponent, data: { state: 'projects', pageTitle: 'Projects' } },
+	{
+		path: 'projects', component: ProjectsPageComponent, data: { state: 'projects', pageTitle: 'Projects' },
+	},
+	{ path: 'projects/:caseName', component: ProjectCaseComponent, data: { state: 'case-studies', pageTitle: 'Case Study' } },
 	{ path: 'contact', component: ContactPageComponent, data: { state: 'contact', pageTitle: 'Contact' } },
 
 

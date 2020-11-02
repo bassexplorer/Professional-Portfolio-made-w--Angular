@@ -3,11 +3,13 @@
 </header>
 
 
-	<div [@routerTransition]="getState(outlet)" class="h-100">
-		<router-outlet #outlet="outlet"></router-outlet>
-	</div>
+<div [@routerTransition]="getState(outlet)"
+	 class="h-100 container-fluid p-0">
+	<router-outlet #outlet="outlet"></router-outlet>
+</div>
 
-	<app-scroll-box [scrollBoxON]="onProfilePage(outlet)" *ngIf="onHomePage(outlet)"  ></app-scroll-box>
+<app-scroll-box [scrollBoxON]="inCaseStudy(outlet)"
+				*ngIf="onHomePage(outlet) && !(breakpointObs$ | async)"></app-scroll-box>
 
 
 
@@ -21,4 +23,4 @@
 <!-- <Particles id="tsparticles"
 [options]="particlesOptions">
 </Particles> -->
-	<!-- content -->
+<!-- content -->
