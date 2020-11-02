@@ -1,0 +1,45 @@
+<div class="my-card-body position-relative overflow-hidden m-3">
+
+	<img [src]='dataSource.cardImgUrl'
+		 class="img-fluid"
+		 alt="Picture of the company's logo">
+
+	<div class="color-cover text-white">
+
+		<div class="card-content">
+
+			<div class="icon-box h-100 d-flex justify-content-center align-items-center">
+				<a class="m-4"
+				   mat-icon-button
+				   matTooltip="Link to Code"
+				   matTooltipPosition="left"
+				   matTooltipHideDelay="100"
+				   [href]="dataSource.links.githubLink"
+				   target="_blank"><i class="fab fa-github"></i></a>
+
+				<a class="m-4"
+				   mat-icon-button
+				   matTooltip="Live Demo"
+				   matTooltipPosition="left"
+				   matTooltipHideDelay="100"
+				   [href]="dataSource.links.liveDemo"
+				   target="_blank"><i class="fas fa-desktop"></i></a>
+
+			</div>
+
+			<div class="desc-box h-100 w-100 justify-content-center d-flex flex-column">
+				<div class="px-4 py-3 d-flex flex-column  h-100">
+					<h3 class="">{{dataSource.title}}</h3>
+					<p class="m-0">{{dataSource.cardShortDesc}}</p>
+					<div class="w-100 text-right mt-auto ">
+						<a class="stretched-link "
+						   [routerLink]='dataSource.links.caseLink'><span class="d-none d-xl-block d-lg-block">Read More...</span></a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="bg"></div>
+	</div>
+</div>
