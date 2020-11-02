@@ -1,6 +1,7 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { projectsArray } from '../shared/projects-infos';
 
 @Component({
 	selector: 'app-projects-page',
@@ -12,6 +13,7 @@ export class ProjectsPageComponent implements OnInit {
 	private static MIN_WIDTH = '(min-width: 1441px)';
 	private static MAX_WIDTH = '(min-width: 1025px) and (max-width: 1440px)';
 	public maxWidth;
+	public projectsArray;
 	constructor(breakpointObserver: BreakpointObserver) {
 		this.maxWidth = breakpointObserver.observe([
 			ProjectsPageComponent.MAX_WIDTH,
@@ -22,13 +24,13 @@ export class ProjectsPageComponent implements OnInit {
 				map((breakpoint: BreakpointState) => {
 					let res = {};
 					const { breakpoints } = breakpoint;
-						if (breakpoints[ProjectsPageComponent.MIN_WIDTH]) {
-							res = { 'background-position': 'center 4rem' };
-						} else if (breakpoints[ProjectsPageComponent.MAX_WIDTH]) {
-							res = { 'background-position': 'center bottom' };
-						} else {
-							res = { 'background-position': 'center center' };
-						}
+					if (breakpoints[ProjectsPageComponent.MIN_WIDTH]) {
+						res = { 'background-position': 'center 4rem' };
+					} else if (breakpoints[ProjectsPageComponent.MAX_WIDTH]) {
+						res = { 'background-position': 'center bottom' };
+					} else {
+						res = { 'background-position': 'center center' };
+					}
 					return res;
 				}),
 			);
@@ -37,6 +39,8 @@ export class ProjectsPageComponent implements OnInit {
 
 
 	public ngOnInit(): void {
+		this.projectsArray = projectsArray;
 	}
+
 
 }
