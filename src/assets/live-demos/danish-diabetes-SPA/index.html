@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,700&display=swap" rel="stylesheet">
+    <link href="assets/style/style.css" rel="stylesheet">
+    <script src="assets/script/script.js" defer></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Danish Diabetes Association</title>
+    <!-- Icons are made by the group. Image and other content from diabetes.dk-->
+</head>
+
+<body>
+
+
+    <header>
+        <img src="assets/images/logo.png" alt="logo">
+
+        <h1 id="menuPageTitle"> Danish Diabetes <span> Association</span> </h1>
+        <img id="loginIcon" src="assets/images/user-icon.png" alt="user user-icon" onclick="loginWindow(event)">
+
+
+        <h1 id="shoppingCardTitle" > Shopping Card </h1>
+        <h1 id="shoppingListTitle" > Shopping List </h1>
+        <h1 id="recipesPageTitle" > Diabetic Recipes</h1>
+        <h1 id="shoppingGuideTitle" > Shopping Guide</h1>
+        <img class="back" id="arrowDisable" src="assets/images/back-arrow-2.png" onclick="arrowBack()" alt="back arrow">
+
+
+    </header>
+
+    <!-- loding screen html-->
+    <div class="loading" id="loadingScreen">
+
+        <div>
+            <img id="pulsing" src="assets/images/logo.png" alt="">
+            <img src="assets/images/logo-title.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="login-wrapper">
+
+    <div id="loginPopup" class="login-popup">
+        <div class="login-box">
+            <img src="assets/images/exit1.png" alt="exit-button" onclick="closeRecipe('loginPopup')">
+            <div>
+                <h1> Log In</h1>
+                <p> You have to login modofuckin bics because just. </p>
+
+
+                <input type="text" id="userName" placeholder="Username"> <br>
+
+                <input type="password" id="passWord" value="" placeholder="Password">
+            </div>
+
+            <div class="basic">
+                <button onclick="validate()"> Login</button>
+                <button onclick="NOPE()"> Sign Up</button>
+            </div>
+
+            <div class="other">
+                <button class="fa-button" onclick="NOPE2()"> <span>F</span> Login with Facebook</button>
+                <button class="go-button" onclick="NOPE3()"> <span>G</span> Login with Google</button>
+            </div>
+            
+        </div>
+    </div>
+
+    </div>
+    <!-- Menu screen html-->
+    <main id="menuPage" class="menu-page menucontent">
+        <div>
+            <h1> Welcome</h1>
+            <p>Some welcome text please dont die and use this app to survive the diabetic alpoaccalips the end of the
+                day you can eat a slice of chocolate of death</p>
+        </div>
+
+        <div class="menu-boxes">
+            <div class="row">
+                <div class="menuBtn" onclick="changeMenu(event, 'shoppingGuide')">
+                    <img src="assets/images/menu-icons/dia-guide.png" alt="">
+                    <h2>Shopping <br> Guide</h2>
+                </div>
+                <div class="menuBtn" onclick="changeMenu(event, 'shoppingCard')">
+                    <img src="assets/images/menu-icons/dia-card.png" alt="">
+                    <h2>Shopping <br> Card</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="menuBtn" onclick="changeMenu(event, 'shoppingList')">
+                    <img src="assets/images/menu-icons/dia-list.png" alt="">
+                    <h2>Shopping <br> List</h2>
+                </div>
+                <div class="menuBtn" onclick="changeMenu(event, 'recipesPage')">
+                    <img src="assets/images/menu-icons/dia-recipes.png" alt="">
+                    <h2>Diabetic <br> Recipes</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Shopping list html-->
+    <main id="shoppingList" class="shopping-list menucontent">
+
+        <!-- activate class to activate the login popup window-->
+        
+
+        <div class="new-list-box" id="addItem" onclick="loginWindow(event)">
+
+            <img src="assets/images/plus.png" alt="add list item" >
+            <p> Add a new list.</p>
+        </div>
+
+        <div class="new-list-box design-2" id="addItemActive">
+
+            <ul id="listBox">
+                
+            </ul>
+                
+            <div>
+          <input type="text" id="listElement" placeholder="Add something to the list"> 
+          <img onclick="addItemToList()" src="assets/images/add.png" alt="">
+            </div>
+
+            
+              
+        </div>
+
+        <div class="menu-boxes">
+            <div class="row">
+                <div>
+                    <h2>User <br> List 1</h2>
+                </div>
+                <div>
+                    <h2> User <br> List 2</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <h2> User <br> List 3</h2>
+                </div>
+                <div>
+                    <h2> User<br> List 4</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Shopping list html-->
+    <main id="shoppingCard" class="shopping-card menucontent">
+
+        <h2>Nutritional content per 100 g / 100 ml</h2>
+
+        <div class="table-container">
+            <Div class="first-row">
+                <h2>Product</h2>
+                <h2>Sugar</h2>
+                <h2>Fat</h2>
+            </Div>
+
+            <div class="table-content">
+                <p>Fruit juice (undiluted)</p>
+                <p> 10 g</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="table-content grey">
+                <p>Soda, soft drinks</p>
+                <p> 1 g</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="table-content">
+                <p>Cocoa drinks, Milk drinks</p>
+                <p> 8 g</p>
+                <p>0.7 g</p>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <Div class="first-row">
+                <h2>Product</h2>
+                <h2>Sugar</h2>
+                <h2>Fat</h2>
+                <h2>Fiber</h2>
+            </Div>
+
+            <div class="table-content">
+                <p>Rye bread, crisp bread</p>
+                <p> 5 g</p>
+                <p>7 g</p>
+                <p>7 g</p>
+            </div>
+            <div class="table-content grey">
+                <p>Whole grain breads, Muffins</p>
+                <p> 5 g</p>
+                <p>7 g</p>
+                <p>5 g</p>
+            </div>
+            <div class="table-content">
+                <p>Cereals</p>
+                <p> 13 g</p>
+                <p>8 g</p>
+                <p>6 g</p>
+            </div>
+            <div class="table-content grey">
+                <p>Milk</p>
+                <p>&nbsp;</p>
+                <p>0.7 g</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="table-content">
+                <p>Acidized milk products</p>
+                <p> 8 g</p>
+                <p>15 g</p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <Div class="first-row">
+                <h2>Product</h2>
+                <h2>Fat</h2>
+            </Div>
+
+            <div class="table-content">
+                <p>Cheese</p>
+                <p>17 g(30+)</p>
+            </div>
+            <div class="table-content grey">
+                <p>Order, sausages and the like.</p>
+                <p>10 g</p>
+            </div>
+            <div class="table-content">
+                <p>Dressings and gravy</p>
+                <p>5 g</p>
+            </div>
+            <div class="table-content grey">
+                <p>Finished dinner dishes</p>
+                <p>5 g</p>
+            </div>
+
+        </div>
+
+        <div class="table-container">
+            <Div class="first-row">
+                <h2>Product</h2>
+                <h2>Fat</h2>
+            </Div>
+
+            <div class="table-content">
+                <p>Meat, poultry and plant-based products</p>
+                <p>10 g</p>
+            </div>
+            <div class="table-content grey">
+                <p>Fish and shellfish <br> Choose: fresh, frozen, canned and fish</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="table-content">
+                <p>Potatoes andpotato products</p>
+                <p>3 g</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <h2>Sweeteners that do not increase blood sugar:</h2>
+            <p>
+                Aspartame (E 951), cyclamate (E 952), thaumatin (E 957), acesulfame K (E 950),neohesperidine (E 959),
+                saccharin (E 954), sucralose (E 955), erythritol (E 968),steviol glycoside (E 960)
+            </p>
+        </div>
+
+
+
+
+
+
+    </main>
+
+    <!-- Recipe screen html-->
+    <main id="recipesPage" class="recipes-page menucontent">
+
+        <div class="filter-wrapper">
+
+
+            <div class=" shadow">
+
+                <div class="arrow">
+                    <img src="assets/images/back-arrow-2.png" onclick="arrowDown()" id="arrowDownId" alt="navigation arrow">
+                </div>
+
+                <div class="filter-bar mask">
+
+                    <div>
+                        <h2>Applied filters:</h2> <img class="search-icon" src="assets/images/search.png"
+                            alt="search icon">
+                    </div>
+
+                        <!-- Filter Element container-->
+                    <div class="filter-box">
+                       
+                        <ul id="filterDir">
+                            <li>#kacsa <img src="assets/images/exit-delete1.png" class="x"></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="filter-expand" id="expanderId">
+                
+                <h2>Filter by:</h2>
+
+                <div class="filter-selector">
+                    <!-- filter tab changer buttons-->
+                    <div class="button-box" id="buttonBox">
+                        <button class="tab-btn left active" onclick="changeTab(event, 'ingredientsTab')">Ingredients</button>
+                        <button class="tab-btn" onclick="changeTab(event, 'timeTab')">Time</button>
+                        <button class="tab-btn" onclick="changeTab(event, 'ratingTab')">Rating</button>
+                        <button class="tab-btn" onclick="changeTab(event, 'sugarTab')">Sugar</button>
+                        <button class="tab-btn right" onclick="changeTab(event, 'fatTab')">Fat</button>
+                    </div>
+                    <!-- INGREDIENTS BOX-->
+                    <div id="contentBox" >
+
+
+                        <div class="ingredients tabcontent" id="ingredientsTab">
+
+                            <ul>
+                                    <li class="filter-element" id="potato" onclick="addFilter(event, 'potato')">#Potato <img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                    <li class="filter-element" id="paprika" onclick="addFilter(event, 'paprika')">#Paprika <img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                    <li class="filter-element" id="cucumber"onclick="addFilter(event, 'cucumber')">#Cucumber <img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    <li class="filter-element" id="onion"onclick="addFilter(event, 'onion')">#Onion <img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    <li class="filter-element" id="garlic"onclick="addFilter(event, 'garlic')">#Garlic <img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    <li class="filter-element" id="kale" onclick="addFilter(event, 'kale')">#Kale <img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                    <li class="filter-element" id="egg" onclick="addFilter(event, 'egg')">#egg<img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                   
+                                    <li class="filter-element" id="cheese" onclick="addFilter(event, 'cheese')">#cheese <img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                    <li class="filter-element" id="parsley" onclick="addFilter(event, 'parsley')">#Parsley <img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                    <li class="filter-element" id="celery"onclick="addFilter(event, 'celery')">#Celery <img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    <li class="filter-element" id="seabass"onclick="addFilter(event, 'seabass')">#Sea Bass <img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    <li class="filter-element" id="tunasteak"onclick="addFilter(event, 'tunasteak')">#Tuna Steak <img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    <li class="filter-element" id="lentil" onclick="addFilter(event, 'lentil')">#lentil <img src="assets/images/add.png"
+                                        alt=""></li>
+
+                                    <li class="filter-element" id="peas" onclick="addFilter(event, 'peas')">#peas<img src="assets/images/add.png"
+                                        alt=""></li>
+                                    
+                                    
+
+                            </ul>
+                           
+                            
+                        </div>
+
+
+                        <!-- TIME SELECTION BOX-->
+
+                        <div class="time tabcontent" id="timeTab">
+
+
+                            <div class="slider-container">
+                                <p>Total time around: <span id="timeValue"></span> Min</p>
+                                <input type="range" min="0" max="15" value="7" class="slider" id="sliderBar">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RATING SELECTION BOX-->
+
+                        <div class="rating tabcontent" id="ratingTab" >
+                            <div class="rating-container">
+
+
+                                <input id="star-5" class="radio" name="star" type="radio" />
+                                <div class="star">
+
+                                    <svg viewBox="0 0 31.1 31.2">
+                                        <path d="M0,0v31.2h31.1V0H0z M25.2,30.4l-9.6-5l-9.6,5l1.9-10.7L0,12.2l10.7-1.6l4.8-9.8l4.8,9.8l10.7,1.6l-7.8,7.6
+                                        L25.2,30.4z" />
+                                    </svg>
+
+                                    <label for="star-5">
+                                        <svg viewBox="0 0 31.1 31.2">
+                                            <path
+                                                d="M3.5,13.2l8.3-1.3l3.7-7.7l3.7,7.7l8.3,1.3l-6,6.2l1.4,8.5l-7.4-4.3l-7.4,4.1l1.4-8.5L3.5,13.2L3.5,13.2z" />
+                                        </svg>
+                                    </label>
+                                </div>
+
+
+                                <input id="star-4" class="radio" name="star" type="radio" />
+                                <div class="star">
+
+                                    <svg viewBox="0 0 31.1 31.2">
+                                        <path d="M0,0v31.2h31.1V0H0z M25.2,30.4l-9.6-5l-9.6,5l1.9-10.7L0,12.2l10.7-1.6l4.8-9.8l4.8,9.8l10.7,1.6l-7.8,7.6
+                                        L25.2,30.4z" />
+                                    </svg>
+
+                                    <label for="star-4">
+                                        <svg viewBox="0 0 31.1 31.2">
+                                            <path
+                                                d="M3.5,13.2l8.3-1.3l3.7-7.7l3.7,7.7l8.3,1.3l-6,6.2l1.4,8.5l-7.4-4.3l-7.4,4.1l1.4-8.5L3.5,13.2L3.5,13.2z" />
+                                        </svg>
+                                    </label>
+                                </div>
+
+
+                                <input id="star-3" class="radio" name="star" type="radio" />
+                                <div class="star">
+
+                                    <svg viewBox="0 0 31.1 31.2">
+                                        <path d="M0,0v31.2h31.1V0H0z M25.2,30.4l-9.6-5l-9.6,5l1.9-10.7L0,12.2l10.7-1.6l4.8-9.8l4.8,9.8l10.7,1.6l-7.8,7.6
+                                        L25.2,30.4z" />
+                                    </svg>
+
+                                    <label for="star-3">
+                                        <svg viewBox="0 0 31.1 31.2">
+                                            <path
+                                                d="M3.5,13.2l8.3-1.3l3.7-7.7l3.7,7.7l8.3,1.3l-6,6.2l1.4,8.5l-7.4-4.3l-7.4,4.1l1.4-8.5L3.5,13.2L3.5,13.2z" />
+                                        </svg>
+                                    </label>
+                                </div>
+
+
+                                <input id="star-2" class="radio" name="star" type="radio" />
+                                <div class="star">
+
+                                    <svg viewBox="0 0 31.1 31.2">
+                                        <path d="M0,0v31.2h31.1V0H0z M25.2,30.4l-9.6-5l-9.6,5l1.9-10.7L0,12.2l10.7-1.6l4.8-9.8l4.8,9.8l10.7,1.6l-7.8,7.6
+                                        L25.2,30.4z" />
+                                    </svg>
+
+                                    <label for="star-2">
+                                        <svg viewBox="0 0 31.1 31.2">
+                                            <path
+                                                d="M3.5,13.2l8.3-1.3l3.7-7.7l3.7,7.7l8.3,1.3l-6,6.2l1.4,8.5l-7.4-4.3l-7.4,4.1l1.4-8.5L3.5,13.2L3.5,13.2z" />
+                                        </svg>
+                                    </label>
+                                </div>
+
+
+                                <input id="star-1" class="radio" name="star" type="radio" />
+                                <div class="star">
+
+                                    <svg viewBox="0 0 31.1 31.2">
+                                        <path d="M0,0v31.2h31.1V0H0z M25.2,30.4l-9.6-5l-9.6,5l1.9-10.7L0,12.2l10.7-1.6l4.8-9.8l4.8,9.8l10.7,1.6l-7.8,7.6
+                                        L25.2,30.4z" />
+                                    </svg>
+
+                                    <label for="star-1">
+                                        <svg viewBox="0 0 31.1 31.2">
+                                            <path
+                                                d="M3.5,13.2l8.3-1.3l3.7-7.7l3.7,7.7l8.3,1.3l-6,6.2l1.4,8.5l-7.4-4.3l-7.4,4.1l1.4-8.5L3.5,13.2L3.5,13.2z" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- SUGAR CONTENT BOX-->
+
+                        <div class="sugar tabcontent" id="sugarTab">
+
+                            <div class="slider-container">
+                                <p>Total sugar content: <span id="sugarValue"></span> g/100g</p>
+                                <input type="range" min="0" max="30" value="15" class="slider-sugar" id="sugarSliderBar">
+
+                            </div> 
+
+                        </div>
+
+
+                        <!-- FAT CONTENT BOX-->
+
+                        <div class="fat tabcontent" id="fatTab">
+                            <div class="slider-container">
+                                <p>Total fat content: <span id="fatValue"></span> g/100g</p>
+                                <input type="range" min="0" max="30" value="15" class="slider-fat" id="fatSliderBar">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Open a recipe by tapping on it-->
+        <div class="filtered-recipes">
+
+            <div class="recipe-box" onclick="openRecipe('gulyasSoup')">
+                <div class="phood-photo">
+                    <img src="assets/images/food-1.jpg" alt="">
+                </div>
+                <div class="recipe-desc">
+                    <h2> Gulyás soup with root herbs</h2>
+                    <div>
+
+                        <div class="star-info-wrapper">
+
+
+                            <div class="stars-box">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star.png" alt="">
+                            </div>
+
+                            <div class="basic-info">
+
+                                <div>
+                                    <p>45</p>
+                                    <img src="assets/images/time-icon1.png" alt="">
+                                </div>
+
+
+                                <div>
+                                    <p>4</p>
+                                    <img src="assets/images/portion-icon.png" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="dish-info">
+                            <p>Contains/person:</p>
+                            <ul>
+                                <li>Energy 1175 kJ, </li>
+                                <li>Carbohydrate 20 g, Fat 11 g,</li>
+                                <li>Carbohydrate per 100 g 4 g</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="recipe-box" onclick="openRecipe(event, 'tomatoSoup')"> 
+                <div class="phood-photo">
+                    <img src="assets/images/food-2.jpg" alt=""> 
+                </div>
+                <div class="recipe-desc">
+                    <h2>Tomato soup</h2>   
+                    <div>
+
+                        <div class="star-info-wrapper"> 
+
+
+                            <div class="stars-box">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">    
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star.png" alt="">
+                            </div>
+
+                            <div class="basic-info">
+
+                                <div>
+                                    <p>35</p>
+                                    <img src="assets/images/time-icon1.png" alt="">   
+                                </div>
+
+
+                                <div>
+                                    <p>1</p>
+                                    <img src="assets/images/portion-icon.png" alt="">  
+                                </div>
+
+                            </div>
+
+                        </div>
+													
+
+                        <div class="dish-info">
+                            <p>Contains/person:</p>             
+                            <ul>
+                                <li>Energy 1450 kJ, </li>
+                                <li>Carbohydrate 25 g, Fat 14 g,</li>
+                                <li>Carbohydrate per 100 g 3 g</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="recipe-box" onclick="openRecipe(event, 'moussaka')"> 
+                <div class="phood-photo">
+                    <img src="assets/images/food-5.jpg" alt=""> 
+                </div>
+                <div class="recipe-desc">
+                    <h2>Moussaka</h2>   
+                    <div>
+
+                        <div class="star-info-wrapper"> 
+
+
+                            <div class="stars-box">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">    
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                            </div>
+
+                            <div class="basic-info">
+
+                                <div>
+                                    <p>60</p>
+                                    <img src="assets/images/time-icon1.png" alt="">   
+                                </div>
+
+
+                                <div>
+                                    <p>6</p>
+                                    <img src="assets/images/portion-icon.png" alt="">  
+                                </div>
+
+                            </div>
+
+                        </div>
+													
+
+                        <div class="dish-info">
+                            <p>Contains/person:</p>             
+                            <ul>
+                                <li>Energy 1750 kJ, </li>
+                                <li>Carbohydrate 21 g, Fat 27 g,</li>
+                                <li>Carbohydrate per 100 g 6 g</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="recipe-box" onclick="openRecipe(event, 'kaleSalad')"> 
+                <div class="phood-photo">
+                    <img src="assets/images/food-3.jpg" alt=""> 
+                </div>
+                <div class="recipe-desc">
+                    <h2>Kale salad with rye kernels</h2>   
+                    <div>
+
+                        <div class="star-info-wrapper"> 
+
+
+                            <div class="stars-box">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">    
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star.png" alt="">
+                            </div>
+
+                            <div class="basic-info">
+
+                                <div>
+                                    <p>25</p>
+                                    <img src="assets/images/time-icon1.png" alt="">   
+                                </div>
+
+
+                                <div>
+                                    <p>4</p>
+                                    <img src="assets/images/portion-icon.png" alt="">  
+                                </div>
+
+                            </div>
+
+                        </div>
+													
+
+                        <div class="dish-info">
+                            <p>Contains/person:</p>             
+                            <ul>
+                                <li>Energy 1625 kJ, </li>
+                                <li>Carbohydrate 44 g, Fat 16 g,</li>
+                                <li>Carbohydrate per 100 g 20 g</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="recipe-box" onclick="openRecipe(event, 'chocoRolls')"> 
+                <div class="phood-photo">
+                    <img src="assets/images/food-4.jpg" alt=""> 
+                </div>
+                <div class="recipe-desc">
+                    <h2>Chocolate rolls</h2>   
+                    <div>
+
+                        <div class="star-info-wrapper"> 
+
+
+                            <div class="stars-box">
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star-on.png" alt="">    
+                                <img src="assets/images/star-on.png" alt="">
+                                <img src="assets/images/star.png" alt="">
+                                <img src="assets/images/star.png" alt="">
+                            </div>
+
+                            <div class="basic-info">
+
+                                <div>
+                                    <p>60</p>
+                                    <img src="assets/images/time-icon1.png" alt="">   
+                                </div>
+
+
+                                <div>
+                                    <p>20 pcs</p>
+                                    <img src="assets/images/portion-icon.png" alt="">  
+                                </div>
+
+                            </div>
+
+                        </div>
+													
+
+                        <div class="dish-info">
+                            <p>Contains/piece:</p>             
+                            <ul>
+                                <li>Energy 625 kJ, </li>
+                                <li>Carbohydrate 26 g, Fat 2 g,</li>
+                                <li>Carbohydrate per 100 g 41 g</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Opened recipe-->
+        <div class="recipe-open" id="gulyasSoup">
+
+            <div class="food-preview">
+                <img src="assets/images/food-1-bigger.jpg" alt="Gulyás Leves">
+                <img src="assets/images/exit1.png" alt="exit-button" onclick="closeRecipe(event, 'gulyasSoup')">
+            </div>
+
+            <div class="recipe-scroll-box">
+                <h2> Gulyás soup with root herbs</h2>
+                <div>
+
+                    <div class="star-info-wrapper">
+
+
+                        <div class="stars-box">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star.png" alt="">
+                        </div>
+
+                        <div class="basic-info">
+
+                            <div>
+                                <p>45</p>
+                                <img src="assets/images/time-icon1.png" alt="">
+                            </div>
+
+
+                            <div>
+                                <p>4</p>
+                                <img src="assets/images/portion-icon.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dish-info">
+                        
+                           <p>Energy 1175 kJ</p>  
+                           <p>Carbohydrate 20 g</p>
+                           <p>Fat 11 g</p>
+                            
+                        
+                    </div>
+
+                    <div>
+                        <h2>Ingredients:</h2>
+                        <p>
+                        150 g of lean beef in strips or cubes <br>
+                        1 tsp. fat<br>
+                        1 onion (about 100 g)<br>
+                        1 clove of garlic<br>
+                        ½ ds. peeled tomatoes, preferably chopped<br>
+                        ½ l beef broth<br>
+                        1 bay leaf<br>
+                        1 tsp. mild pepper<br>
+                        1 tbsp. encountered strong chilli<br>
+                        salt, pepper<br>
+                        1 small parsnip (about 100 g)<br>
+                        ¼ small celery (about 75 g)<br>
+                        2 carrots (about 150 g)<br>
+                        Garnish<br>
+                        Possibly. chopped parsley<br>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Instructions:</h2>
+                        <p>
+                            Sweat the beef into the fat. Arrow and chop onions and garlic. Sweat the onions for a few minutes. Add peeled tomatoes, broth, bay leaves and spices.
+                            Cook the soup for approx. 20 min.
+                            Peel parsley, celery and carrots and cut into cubes or slices. Add the vegetables and allow the soup to cook further for approx. 10 min.
+                            Taste the soup for.
+                            Serving If :
+                            necessary gold ash soup with root herbs with chopped parsley and serve with 1 slice (40 g) bread per person.
+                        </p>
+                    </div>
+            </div>
+           
+        </div>
+
+        </div>
+
+        <div class="recipe-open" id="tomatoSoup">
+
+            <div class="food-preview">
+                <img src="assets/images/food-2-bigger.jpg" alt="Paradicsom Leves">
+                <img src="assets/images/exit1.png" alt="exit-button" onclick="closeRecipe(event, 'tomatoSoup')"> 
+            </div>
+
+            <div class="recipe-scroll-box">
+                <h2>Tomato soup</h2>
+                <div>
+
+                    <div class="star-info-wrapper">
+
+
+                        <div class="stars-box">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">  
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star.png" alt="">
+                        </div>
+
+                        <div class="basic-info">
+
+                            <div>
+                                <p>35</p>
+                                <img src="assets/images/time-icon1.png" alt=""> 
+                            </div>
+
+
+                            <div>
+                                <p>1</p>
+                                <img src="assets/images/portion-icon.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dish-info">      
+                        
+                           <p>Energy 1450 kJ</p>  
+                           <p>Carbohydrate 25 g</p>
+                           <p>Fat 14 g</p>
+                            
+                        
+                    </div>
+
+                    <div>
+                        <h2>Ingredients:</h2>
+                        <p>
+                            ½ leeks (about 60 g)<br>
+                            1 small carrot (about 50 g)<br>
+                            1 slice of cabbage (about 200 g)<br>
+                            75 g minced beef with a maximum of 10% fat<br>
+                            1 tsp. liquid fat<br>
+                            2½ dl vegetable broth<br>
+                            ½ ds. peeled tomatoes (200 g)<br>
+                            ½ tbsp. tomato paste, preferably contentrate<br>
+                            ½ tsp. mild pepper<br>
+                            ¼ tsp. dried basil<br>
+                            salt, pepper
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Instructions:</h2>
+                        <p>
+                            Cut the leek into thin rings. Cut the carrot into small cubes. Cut the cabbage finely.
+
+                            Brown the meat in the fat. Add the vegetables and sweat them. Add the remaining ingredients and cook the soup for 10-15 minutes. Taste the soup for.
+                            
+                            Serve tomato soup with whole grain bread.
+                            
+                            You can replace the carrot or some of the cabbage with celery.
+                        </p>
+                    </div>
+            </div>
+           
+        </div>
+
+        </div>
+
+        <div class="recipe-open" id="moussaka">
+
+            <div class="food-preview">
+                <img src="assets/images/food-5-bigger.jpg" alt="Moussaka">
+                <img src="assets/images/exit1.png" alt="exit-button" onclick="closeRecipe(event, 'moussaka')"> 
+            </div>
+
+            <div class="recipe-scroll-box">
+                <h2>Moussaka</h2>
+                <div>
+
+                    <div class="star-info-wrapper">
+
+
+                        <div class="stars-box">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">  
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                        </div>
+
+                        <div class="basic-info">
+
+                            <div>
+                                <p>60</p>
+                                <img src="assets/images/time-icon1.png" alt=""> 
+                            </div>
+
+
+                            <div>
+                                <p>6</p>
+                                <img src="assets/images/portion-icon.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dish-info">      
+                        
+                           <p>Energy 1750 kJ</p>  
+                           <p>Carbohydrate 21 g</p>
+                           <p>Fat 27 g</p>
+                            
+                        
+                    </div>
+
+                    <div>
+                        <h2>Ingredients:</h2>
+                        <p>
+                            2 eggplants (about 500 g)<br>
+                            1 tsp. salt<br>
+                            1 tbsp. oil<br>
+                            4 potatoes (about 300 g)<br>
+                            2 onions (about 200 g)<br>
+                            1-2 cloves of garlic to taste<br>
+                            400 g minced lamb with maximum<br>
+                            10-12% fat<br>
+                            1 ds. peeled tomatoes, preferably chopped (400 g)<br>
+                            1 small ds. contentrated tomato puree (70 g)<br>
+                            1 tsp. dried oregano<br>
+                            salt, pepper<br>
+                            2½ dl Greek yogurt 0.2% fat<br>
+                            2 eggs<br>
+                            50 g of grated cheese with a maximum of 17% fat<br>
+                            ½ tsp. fine nutmeg<br>
+                            ½ tsp. salt
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Instructions:</h2>
+                        <p>
+                            Cut the eggplant into approx. ½ cm thick slices. Sprinkle with salt and allow to soak for at least ½ hour.
+
+                            Wipe the slices and fry them briefly in the oil several times. Take them off the pan.
+
+                            Cut the potatoes into thin slices and place in an ovenproof dish for approx. 30 x 22 cm.
+
+                            Chop the onion and garlic and sweat it in the rest of the oil. Add the meat and fry it for a few mins. Add peeled tomatoes, tomato puree and spices and cook for about 10 minutes. without a lid so some of the moisture evaporates.
+
+                            Lay eggplant slices and meat mixture layered in the dish on top of the potato slices.
+
+                            Whisk yogurt, eggs and cheese with the spices and pour the mixture over the dish.
+
+                            Bake at 200 ° C for approx. 45 min. on middle oven rack. Cover stanniol if dish becomes too brown or move dish into oven.
+
+                            Server Moussaka with whole grain bread and salad for.
+
+                            You can use several potatoes instead of one eggplant. Squash can replace eggplant. Minced beef can replace lamb.
+
+                            3 tbsp. grated parmesan cheese can be mixed in the yogurt instead of grated cheese.
+                        </p>
+                    </div>
+            </div>
+           
+        </div>
+
+        </div>
+
+        <div class="recipe-open" id="kaleSalad">
+
+            <div class="food-preview">
+                <img src="assets/images/food-3-bigger.jpg" alt="Kél saláta">
+                <img src="assets/images/exit1.png" alt="exit-button" onclick="closeRecipe(event, 'kaleSalad')"> 
+            </div>
+
+            <div class="recipe-scroll-box">
+                <h2>Kale salad with rye kernels</h2>
+                <div>
+
+                    <div class="star-info-wrapper">
+
+
+                        <div class="stars-box">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">  
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star.png" alt="">
+                        </div>
+
+                        <div class="basic-info">
+
+                            <div>
+                                <p>25</p>
+                                <img src="assets/images/time-icon1.png" alt=""> 
+                            </div>
+
+
+                            <div>
+                                <p>4</p>
+                                <img src="assets/images/portion-icon.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dish-info">      
+                        
+                           <p>Energy 1625 kJ</p>  
+                           <p>Carbohydrate 44 g</p>
+                           <p>Fat 16 g</p>
+                            
+                        
+                    </div>
+
+                    <div>
+                        <h2>Ingredients:</h2>
+                        <p>
+                            150 g rye kernels or whole grain rice<br>
+
+                            150 g of fresh kale leaves<br>
+
+                            50 g of edamame beans<br>
+
+                            1 apple (about 100 g)<br>
+
+                            1 red onion (about 100 g)<br>
+
+                            1 tsp. oil<br>
+
+                            ½ tsp. smoked paprika<br>
+
+                            1 pinch of salt<br>
+
+                            50 g almonds<br>
+
+                            50 g salad with a maximum of 17% fat<br>
+
+                            1½ tbsp. oil<br>
+
+                            4 tbsp. apple vinegar<br>
+
+                            2 tsp. honey<br>
+
+                            salt, pepper
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Instructions:</h2>
+                        <p>
+                            Boil rye kernels or whole grain rice as directed on the packaging and cool them.
+
+                            Remove the stick from the kale and chop the cabbage very finely.
+
+                            Pour boiling water over the beans and cool them.
+
+                            Cut the apple into thin slices.
+
+                            Halve the onion and cut it into thin strips.
+
+                            Heat the oil - do not smoke - and add the peppers, salt and almonds. Shake them for a few minutes, so the paprika has spread to the almonds. Cool them down.
+
+                            Mix all ingredients for the marinade.
+
+                            Mix rice or grains together with vegetables and salad and turn in marinade. the salatterns before turning them in.
+
+                            Chop the almonds roughly and spread them over the salad just before serving.
+
+                            Serve the salad as a breakfast dish - you can possibly. add a leftover chicken.
+
+                            You can buy ready-to-use rye seeds. Pour if necessary boiling water over them first.
+                        </p>
+                    </div>
+            </div>
+           
+        </div>
+
+        </div>
+
+        <div class="recipe-open" id="chocoRolls">
+
+            <div class="food-preview">
+                <img src="assets/images/food-4-bigger.jpg" alt="Csokitekercs">
+                <img src="assets/images/exit1.png" alt="exit-button" onclick="closeRecipe(event, 'chocoRolls')"> 
+            </div>
+
+            <div class="recipe-scroll-box">
+                <h2>Chocolate rolls</h2>
+                <div>
+
+                    <div class="star-info-wrapper">
+
+
+                        <div class="stars-box">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">
+                            <img src="assets/images/star-on.png" alt="">  
+                            <img src="assets/images/star.png" alt="">
+                            <img src="assets/images/star.png" alt="">
+                        </div>
+
+                        <div class="basic-info">
+
+                            <div>
+                                <p>60</p>
+                                <img src="assets/images/time-icon1.png" alt=""> 
+                            </div>
+
+
+                            <div>
+                                <p>20 pcs</p>
+                                <img src="assets/images/portion-icon.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dish-info">      
+                        
+                           <p>Energy 625 kJ</p>  
+                           <p>Carbohydrate 26 g</p>
+                           <p>Fat 2 g</p>
+                            
+                        
+                    </div>
+
+                    <div>
+                        <h2>Ingredients:</h2>
+                        <p>
+                            10 g of yeast<br>
+                            4 parts water<br>
+                            2 parts soured milk product with a maximum of 1.5% fat<br>
+                            1 tsp. salt<br>
+                            1 tbsp. honey, preferably liquid<br>
+                            1 tsp. vanilla sugar<br>
+                            100 g oatmeal, coarsely rolled (about 3 dl)<br>
+                            300 g rye flour (approx. 6 dl)<br>
+                            ca. 300 g wheat flour (about 6 dl)<br>
+                            75 g of dark chocolate with at least 70% cocoa
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Instructions:</h2>
+                        <p>
+                            Stir the yeast in cold water. Add the other ingredients except chocolate and stir well together. It should be a little sticky. Chop the chocolate roughly and stir in. Cover the bowl with plastic wrap and allow to rise 6-8 hours, preferably overnight in refrigerator.
+
+                            Stir in the dough and divide into 20 greased cupcake molds. You can also put the dough on a baking sheet with baking paper. Allow the buns to simmer for approx. 20 min.
+
+                            Bake the rye balls at 200 ° C for approx. 25 min. on middle oven rack. Cool the buns on a baking dish.
+
+                            Serve rye breads with chocolate as a snack. They can be eaten as they are.
+                            
+                            Rugs with chocolate can be frozen.
+                        </p>
+                    </div>
+            </div>
+           
+        </div>
+
+        </div>
+
+
+
+
+    </main>
+
+    <!-- Shopping guide html-->
+    <main id="shoppingGuide" class="guide-page menucontent">
+        
+        <div class="intro">
+            <h2>Choose healthier food <br> and drinks</h2>
+
+
+            <p>Use the guide when shopping. <br>
+                Look for the keyhole icon and the whole grain icon.<br>
+                The brands help you find healthier items.<br>
+            </p>
+
+        </div>
+
+        <div class="products"> 
+            <h3>Rye bread and crispbread</h3>
+            <img src="assets/images/products/product-1.png" alt="">
+            <p>Choose (per 100 g): <br>
+            <strong>  Not more than 7 g of fat // not more than 5 g of sugars // at least 6 g of dietary fiber</strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Cereals</h3>
+            <img src="assets/images/products/product-2.png" alt="">
+            <p>Choose (per 100 g): <br>
+            <strong>  Not more than 8 g of fat // not more than 13 g of sugars // at least 6 g of dietary fiber </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Fermented dairy products</h3>
+            <img src="assets/images/products/product-3.png" alt="">
+            <p>Choose: <br>
+            <strong>  Not more than 1,5% fat // not more than 4% added sugar or not more than 8 g of sugars per 100 g
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Meat, poultry and plant-based products</h3>
+            <img src="assets/images/products/product-4.png" alt="">
+            <p>Choose: <br>
+            <strong>  Maximum 10% fat
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Fish and sellfish</h3>
+            <img src="assets/images/products/product-5.png" alt="">
+            <p>Choose: <br>
+            <strong>Fresh, frozen, canned and fishery
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Vegetables and fruit</h3>
+            <img src="assets/images/products/product-6.png" alt="">
+            <p>Choose: <br>
+            <strong>  Fresh, frozen or preserved without added sugar
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Food on the go</h3>
+            <img src="assets/images/products/product-7.png" alt="">
+            <p>Choose(per 100 g): <br>
+            <strong>  Maximum 5 g fat, preferably with vegetables and whole grains
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Dressings and gravy</h3>
+            <img src="assets/images/products/product-8.png" alt="">
+            <p>Choose: <br>
+            <strong> Maximum 5 g of fat
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Fruit juice</h3>
+            <img src="assets/images/products/product-9.png" alt="">
+            <p>Choose: <br>
+            <strong> Not more than 10 g of sugars per 100 ml undiluted
+                 </strong>
+            </p>
+        </div>
+
+        <div class="icon-info-box">
+
+           <h3>Go for the marks </h3> 
+
+            <div > 
+            <p>
+            With the Keyhole Mark you get an item with <br>
+            less fat, sugar and salt, and more dietary fiber
+                
+            </p>
+            <img src="assets/images/products/key-icon.png" alt="">
+        </div>
+            
+            <hr>
+            
+        <div>
+            <img src="assets/images/products/orange-thing-icon.png" alt="">
+            <p>With the Whole Grain logo you get a product with <br>
+                lots of whole grains, less fat, sugar, salt <br>
+                and more dietary fiber.
+            </p>
+        </div>
+        </div>
+
+
+        <div class="products" style="margin-top:0;"> 
+            <h3>Wholemeal bread and –buns </h3>
+            <img src="assets/images/products/product-10.png" alt="">
+            <p>Choose (per 100 g):<br>
+            <strong> Not more than 7 g of fat // not more than 5 g of sugars // at least 5 g of dietary fiber 
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Milk</h3>
+            <img src="assets/images/products/product-11.png" alt="">
+            <p>Choose: <br>
+            <strong> Not more than 0.7% fat 
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Cheese</h3>
+            <img src="assets/images/products/product-12.png" alt="">
+            <p>Choose: <br>
+            <strong> Maximum 17% fat (30+)  
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Spreads</h3>
+            <img src="assets/images/products/product-13.png" alt="">
+            <p>Choose: <br>
+            <strong> Maximum 10% fat  
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Potatoes and potato products </h3>
+            <img src="assets/images/products/product-14.png" alt="">
+            <p>Choose(per 100 g): <br>
+            <strong>  Maximum 3 g of fat 
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Ready-made dinner dishes</h3>
+            <img src="assets/images/products/product-15.png" alt="">
+            <p>Choose(per 100 g): <br>
+            <strong>  Maximum 5 g fat, preferably with vegetables and whole grains 
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Cocoa drinks and milk drinks </h3>
+            <img src="assets/images/products/product-16.png" alt="">
+            <p>Choose(per 100 g): <br>
+            <strong>  Not more than 0,7% fat // not more than 4% added sugar or not more than 8 g of sugars per 100 ml 
+                 </strong>
+            </p>
+        </div>
+
+        <div class="products"> 
+            <h3>Soda and soft drink </h3>
+            <img src="assets/images/products/product-17.png" alt="">
+            <p>Choose(per 100 g): <br>
+            <strong>  Not more than 1 g of sugars per 100 ml
+                 </strong>
+            </p>
+        </div>
+
+
+
+
+
+        <div class="intro">
+            
+            <p>© The National Board of Health and the Diabetes Association. December 2018. <br>
+                2nd edition, 1st edition. Ex-School Graphic Design & Print. <br>
+                Ordering: netbutik.diabetes.dk or kfsbutik.dk <br>
+                
+            </p>
+
+        </div>
+
+
+
+    </main>
+
+    
+
+
+
+
+
+    <footer>
+        <p> for more information <br>
+            <a href="http://www.diabetes.dk">diabetes.dk</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
