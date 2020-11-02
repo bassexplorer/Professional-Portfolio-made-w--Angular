@@ -1,0 +1,100 @@
+@import url(variables.css);
+@import url(reset.css);
+@import url(nav.css);
+@import url(header.css);
+@import url(footer.css);
+
+@import url(home.css);
+@import url(about.css);
+@import url(contact.css);
+
+@import url(horse-behavior.css);
+
+@import url(practical-info.css);
+@import url(privacy-policy.css);
+
+@import url(training-cities.css);
+@import url(category-pages.css);
+
+@import url(practical-info.css);
+@import url(privacy-policy.css);
+
+@import url(feed-consulting.css);
+@import url(therapy-pages.css);
+
+@import url(shop-home.css);
+
+
+#appRoot{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: var(--section-bg-color);
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+html, body{
+    background-color: var(---section-bg-color);
+    font-family:'Lato', sans-serif;
+}
+
+h1,h2,h3,h4{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.red{
+    color:var(--heading-color);
+}
+
+.bold{
+    font-weight: var(--text-bold);
+}
+
+.breadcrumbs {
+    padding: 10px 40px;
+    list-style: none;
+    text-decoration: none;
+    font-family: var(--text-secondary);
+    justify-content: flex-start;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.breadcrumbs li {
+    display: inline;
+}
+ul.breadcrumbs li+li:before {
+    padding: 8px;
+    color: var(--text-gray);
+    content: "/\00a0";
+}
+
+ul.breadcrumbs li a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+ul.breadcrumbs li a:hover {
+    color: var(--link-underline);
+    text-decoration: underline;
+}
+
+.animation-allow{
+    transition: all .3s ease-in-out;
+}

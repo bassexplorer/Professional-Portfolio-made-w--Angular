@@ -1,0 +1,53 @@
+<header class="header-contact">
+    <div class="title-box">
+        <h1>Contact Us</h1>
+        <h3>We would love to hear <span>from you</span></h3>
+    </div>
+</header>
+
+    <ul class="breadcrumbs">
+        <li><a href="#home">Home</a></li>
+        <li>Contact Us</li>
+    </ul>
+
+    <div class="container">
+
+        <div class="column">
+            <p><span class="bigger">Send us </span>any question you have and we will make <br> sure that we answer as soon as possible.</p>
+
+            <ul>
+                <li><span>Location: </span>Kringelhøjvej 12, 9850 Hirtshals</li>
+                <li><span>Telephone: </span>31 20 35 20</li>
+                <li class="smaller"><span>Opening: </span> <br> Monday - Thursday : 16<sup>00</sup> - 17<sup>00</sup> <br>
+                Weekend : 8<sup>00</sup> - 10<sup>00</sup>
+                </li>
+                <li><span>E-mail: </span>info@dyreterapi.dk</li>
+
+            
+            </ul>
+            
+
+        </div>
+
+        <div class="column">
+            
+                
+                <input type="text" id="fname" name="fullname" placeholder="Full name...">
+            
+                <input type="text" id="email" name="e-mail" placeholder="E-mail">
+            
+                <textarea id="subject" name="subject" placeholder="Your message..." style="height:200px"></textarea>
+            
+
+                <button onclick="thankMsg()">Contact us</button>
+
+        </div>
+    </div>
+    
+    <div class="contact-popup" onclick="thankMsg(true)">
+        <div>
+            <h1>Thank you for reaching out!</h1>
+            <p> We will get back to you with an answer soon.</p>
+                <a onclick="thankMsg(true)">Ok</i></a>
+        </div>
+    </div>
