@@ -1,22 +1,25 @@
-<main class="contact-page d-flex flex-column justify-content-between">
+<div class="contact-page d-flex flex-column h-100 overflow-hidden">
 
-	<div class="form-container mt-auto">
-		<h1>Get in touch with me.</h1>
-		<div class="row">
+	<div class="form-container w-100 my-auto" >
+		<h1 *ngIf="!onConfirmation">Get in touch with me.</h1>
+		<h1 *ngIf="onConfirmation">Thank You For Reaching Out To Me</h1>
+		<div class="row justify-content-center d-flex" *ngIf="!onConfirmation" >
 
-			<form [formGroup]="contactForm" class="w-100"
-				  (ngSubmit)="onSubmit()">
+			<form [formGroup]="contactForm"
+				  class="w-100  col-11 col-sm-8 col-xl-5 justify-content-center d-flex flex-column"
+				  (ngSubmit)="onSubmit(contactForm.value)">
 
 
-				<div class="form-group">
-					<mat-form-field class="name-input"
+				<div class="form-group row">
+
+					<mat-form-field class="name-input pr-2 col-6"
 									appearance="fill">
 						<mat-label>Your Name</mat-label>
 						<input formControlName="fullName"
 							   matInput>
 					</mat-form-field>
 
-					<mat-form-field class="email-input"
+					<mat-form-field class="email-input pl-2 col-6"
 									appearance="fill">
 						<mat-label>Your E-mail</mat-label>
 						<input matInput
@@ -53,14 +56,14 @@
 				</div>
 
 				<button type="submit"
-						mat-raised-button class="submit-btn"
+						mat-raised-button
+						class="submit-btn align-self-center py-2 px-5"
 						color="accent">Submit</button>
 			</form>
 
 		</div>
 	</div>
 
-	<!-- <app-scroll-box [scrollBoxON]="false" ></app-scroll-box> -->
-	<app-copyright class="d-flex align-items-end mt-auto"></app-copyright>
+	<app-copyright class="d-flex align-items-end"></app-copyright>
 
-</main>
+</div>
