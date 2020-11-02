@@ -1,44 +1,68 @@
-import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
+import { ContentChild, Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { ScrollService } from './scroll-box/scroll.service';
 
 @Directive({
 	selector: '[ScrollFollow]'
 
 })
-export class ScrollFollowerDirective implements OnInit {
+export class ScrollFollowerDirective implements OnInit, OnDestroy {
 
 	@Input() public offsetFromTop = window.innerHeight * 0.65; // number of pixels of the widget should be from top of the window
-	@Input() public divElement: HTMLElement;
-	public canScroll = false;
+	@Input() public divElement: ElementRef;
+	@ContentChild('scrollTxt') public textBox: ElementRef;
+	public divSub$: Subscription;
 
-	constructor(private element: ElementRef, private renderer: Renderer2) {
+
+	constructor(private element: ElementRef, private renderer: Renderer2, private scrollService: ScrollService) {
 		this.renderer.setStyle(this.element.nativeElement, 'top', this.offsetFromTop + 'px');
 		this.renderer.setStyle(this.element.nativeElement, 'transition', 'top .3s ease-in-out');
 	}
 
-	public ngOnInit(): void { }
+	public ngOnInit(): void {
+		this.divSub$ = this.scrollService.scrollToDiv.subscribe(((div) => {
+			this.divElement = div;
+		}));
+		}
+
 
 	@HostListener('window:scroll', ['$event']) public scrollFollow(event) {
 		const currentPosition = event.path[1].pageYOffset;
-		this.renderer.setStyle(this.element.nativeElement, 'top', (this.offsetFromTop + currentPosition) + 'px');
-
 
 		if (currentPosition > (this.offsetFromTop / 4)) {
-			this.canScroll = true;
-		} else {
-			this.canScroll = false;
+			this.renderer.setStyle(this.element.nativeElement, 'top', (this.offsetFromTop + currentPosition) + 'px');
 		}
+		this.setupArrowTitle();
 
 	}
 
-	// @HostListener('click') public scrollToSection() {
+	@HostListener('click') public scrollToSection() {
+		if (window.scrollY > 100) {
+			window.document.documentElement.scrollTop = 0;
+			this.setupArrowTitle();
+		} else {
+			this.setupArrowTitle();
+			this.divElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	}
 
-	// 	if (this.canScroll) {
-	// 		window.document.documentElement.scrollTop = 0;
 
-	// 	} else {
-	// 		this.divElement.scrollIntoView(false);
-	// 	}
-	// }
+	public setupArrowTitle() {
+		if (window.scrollY > 100) {
+			this.renderer.setProperty(this.textBox.nativeElement, 'innerText', 'Back To Top');
+			this.renderer.addClass(this.textBox.nativeElement, 'up-arrow');
+			this.renderer.removeClass(this.textBox.nativeElement, 'down-arrow');
+		} else {
+			this.renderer.setProperty(this.textBox.nativeElement, 'innerText', 'Scroll Down');
+			this.renderer.addClass(this.textBox.nativeElement, 'down-arrow');
+			this.renderer.removeClass(this.textBox.nativeElement, 'up-arrow');
+		}
+	}
+
+	public ngOnDestroy(): void {
+		this.divSub$.unsubscribe();
+	}
 
 
 }
