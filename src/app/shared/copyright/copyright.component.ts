@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CopyService } from '../copy.service';
+import { CopyService } from './copy.service';
 
 @Component({
-  selector: 'app-copyright',
-  templateUrl: './copyright.component.html',
-  styleUrls: ['./copyright.component.scss']
+	selector: 'app-copyright',
+	templateUrl: './copyright.component.html',
+	styleUrls: ['./copyright.component.scss']
 })
 export class CopyrightComponent implements OnInit, OnDestroy {
 
