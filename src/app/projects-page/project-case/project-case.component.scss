@@ -1,0 +1,87 @@
+.project-case {
+
+    .icon-box a {
+        font-size: 1.5rem;
+    }
+
+    .red-shape {
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+        background-color: #500909;
+        padding: 10vh 0 !important;
+
+        @media (max-width: 768px) {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+
+        }
+    }
+
+
+
+	@media (max-width: 1024px) {
+
+        h1 {
+            font-size: 6vw !important;
+        }
+
+        h2 {
+            font-size: 5vw !important;
+        }
+
+        h3 {
+            font-size: 3vw !important;
+		}
+
+		p{
+			font-size: 3vw;
+		}
+
+		.icon-box a {
+			font-size: 2.5rem;
+		}
+
+	}
+
+	@media (max-width: 576px) {
+
+        h1 {
+            font-size: 8vw !important;
+        }
+
+        h2 {
+            font-size: 12vw !important;
+        }
+
+        h3 {
+            font-size: 8vw !important;
+		}
+
+		p{
+			font-size: 4vw;
+		}
+
+		.icon-box a {
+			font-size: 3rem;
+		}
+	}
+
+    .problem {
+        mix-blend-mode: screen;
+    }
+
+    .solution {
+        mix-blend-mode: darken;
+    }
+
+    .no-indent {
+        text-indent: 0;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+}

@@ -1,0 +1,112 @@
+<div class="project-case pt-5 d-flex flex-column justify-content-center" *ngIf="!!currentProject" >
+	<!-- INTRO PART ------------------------- -->
+	<div class="row justify-content-center pt-5 flex-column-reverse flex-xl-row flex-md-row ">
+		<div class="col-12 col-md-4 col-xl-3">
+			<img class="img-fluid"
+				 [src]="currentProject.responsiveViewImg"
+				 alt="Responsive view of the project case">
+			<div>
+				<div class="icon-box d-flex justify-content-center align-items-center">
+
+					<a class="m-4"
+					   mat-icon-button
+					   matTooltip="Go back to projects"
+					   matTooltipPosition="left"
+					   matTooltipHideDelay="100"
+					   routerLink='../'>
+						<i class="fas fa-arrow-left"></i>
+					</a>
+
+					<a class="m-4"
+					   mat-icon-button
+					   matTooltip="Link to Code"
+					   matTooltipPosition="left"
+					   matTooltipHideDelay="100"
+					   [href]="currentProject.links.githubLink"
+					   target="_blank"><i class="fab fa-github"></i></a>
+
+					<a class="m-4"
+					   mat-icon-button
+					   matTooltip="Live Demo"
+					   matTooltipPosition="left"
+					   matTooltipHideDelay="100"
+					   [href]="currentProject.links.liveDemo"
+					   target="_blank"><i class="fas fa-desktop"></i></a>
+
+
+				</div>
+			</div>
+		</div>
+		<div class="col-10 col-xl-5 col-md-6 align-self-center">
+			<h1>{{currentProject.title}}</h1>
+			<p>{{currentProject.companyDesc}}</p>
+		</div>
+	</div>
+
+	<!-- PROBLEM PART ---------------------------------- -->
+	<div
+		 class="row red-shape justify-content-center text-white py-5 align-items-center flex-column flex-xl-row flex-md-row ">
+		<div class="col-10 col-md-6 col-xl-4 py-5 offset-xl-2 offset-md-1 offset-0">
+			<h2 class="font-weight-bold">Problem</h2>
+			<p>{{currentProject.problem}}</p>
+
+			<div *ngIf="currentProject.restriction">
+				<h3 class="font-weight-bold mt-5"> Restriction</h3>
+				<p>{{currentProject.restriction}}</p>
+			</div>
+		</div>
+
+
+		<div class="col-10 col-md-3 col-xl-3 py-5 mx-auto">
+			<img class="img-fluid problem mx-auto w-100"
+				 src="../../../assets/images/products/problem.svg"
+				 alt="Responsive view of the project case">
+		</div>
+	</div>
+	<!-- SOLUTION PART -------------------------------------------- -->
+	<div class="row  justify-content-center  align-items-center" #solutionPart>
+
+		<div class="col-10 col-md-5 col-xl-4 py-5 offset-xl-2  offset-md-1 offset-0">
+			<h2 class="font-weight-bold">Solution</h2>
+			<p>{{currentProject.solution}}</p>
+		</div>
+
+
+		<div class="col-12 col-md-4 col-xl-4 py-5 mx-auto">
+			<img class="img-fluid solution"
+				 src="../../../assets/images/products/Image 1.svg"
+				 alt="Responsive view of the project case">
+		</div>
+
+	</div>
+
+	<!--  MY ROLE TECH PART --------------------------------------------- -->
+	<div class="row align-items-center justify-content-center ">
+
+		<div class="col-10 col-md-4 col-xl-3 py-5 offset-xl-2  offset-md-1 offset-0  align-self-start">
+			<h3 class="font-weight-bold">Technologies used</h3>
+			<p class="no-indent">
+				<span *ngFor="let technology of currentProject.technologies">► {{technology}}<br></span>
+			</p>
+			<h3 class="font-weight-bold">Notable features</h3>
+			<p class="no-indent">
+				<span *ngFor="let feature of currentProject.features">► {{feature}}<br></span>
+			</p>
+		</div>
+
+
+		<div class="col-10 col-md-4 col-xl-3  py-5 mx-auto">
+			<h3 class="font-weight-bold">My Role</h3>
+
+			<p class="no-indent">
+				<span *ngFor="let role of currentProject.myRole">► {{role}}<br></span>
+			</p>
+
+		</div>
+
+	</div>
+
+
+	<app-copyright class="mt-auto mx-auto"></app-copyright>
+
+</div>
