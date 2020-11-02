@@ -1,7 +1,7 @@
-<main class="home-container"
+<main class="home-container text-center text-sm-left text-lg-left text-xl-left row"
 	  [@HomePage]>
 
-	<div class="left-side">
+	<div class="left-side col-xl-6 col-12 d-flex justify-content-center flex-column h-100">
 
 		<h1 class="text-nowrap">Hi, my name is <span>Ben.</span></h1>
 
@@ -9,11 +9,11 @@
 
 			<h3>I enjoy many things in life, but at the end of the day my real desire is to build. Build something that
 				makes
-				tomorrow a better places.<span class="blinking">_</span>
+				tomorrow a better place.<span class="blinking">_</span>
 			</h3>
 			<div class="title-of-me">Front End Developer</div>
 
-			<div class="cta-btn-box">
+			<div class="cta-btn-box mb-auto">
 
 				<a mat-raised-button
 				   type="button"
@@ -57,24 +57,21 @@
 		</div>
 	</div>
 
-	<div class="right-side d-flex align-items-end">
-
-		<!-- <div class="d-flex w-100 justify-content-end align-self-start">
-			<img src="../../assets/images/circle.svg"
-				 id="circle-svg"
-				 class="img-fluid w-100 mb-5"
-				 alt="">
-		</div> -->
+	<!-- <div class="right-side col-xl-6 col-12"> -->
+	<div class="right-side col-xl-6 ">
 
 		<div class="d-flex align-items-end justify-content-center">
-			<img class="image-of-me img-fluid"
+			<img class="image-of-me img-fluid d-none d-sm-none d-md-flex d-xl-flex"
 				 src="../../assets/images/me.png"
 				 alt="An image of Mark Bence Kiss"
 				 draggable="false">
 		</div>
 
-		<div class="circle-clip-path w-100 h-100" id="circle-svg"></div>
+		<div class="circle-clip-path w-100 h-100 d-none d-xl-flex"
+			 id="circle-svg"></div>
 	</div>
 
+	<div class="circle-clip-path d-flex d-lg-flex d-xl-none"
+			 id="circle-svg"></div>
 
 </main>
