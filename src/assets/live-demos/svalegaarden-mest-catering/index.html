@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Svalegaarden-Mest</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/8acbbdd47e.js" crossorigin="anonymous"></script>
+   <script src="assets/javascript/javascript.js" type="text/javascript"></script>
+    <!-- 
+    The arrow from :
+    https://iconmonstr.com/angel-down-circle-thin-png/
+
+    All other icons are from the restaurant page.
+    -->
+</head>
+
+
+<body class="index-grid">
+
+
+    <!--- Header --->
+    <header class="index-header" id="top" > 
+
+    <nav class="index-nav">
+        <div class="nav-list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="spring.html">Spring</a>
+                        <a href="winter.html">Winter</a>
+                        <a href="fall.html">Autumn</a>
+                        <a href="summer.html">Summer</a>
+                    </div>
+                </li>
+                <li><a href="eatatmest.html">Eat at Mest</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Events</a>
+                    <div class="dropdown-content">
+                        <a href="wedding.html">Wedding</a>
+                        <a href="confirmation.html">Confirmation</a>
+                    </div>
+                </li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="hamburger">
+
+            <div class="bar1 black"></div>
+            <div class="bar2 black"></div>
+            <div class="bar3 black"></div>
+
+        </div>
+
+
+        <div class="appear-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="title">Menus</li>
+                <li><a href="spring.html">Spring</a></li>
+                <li><a href="winter.html">Winter</a></li>
+                <li><a href="fall.html">Autumn</a></li>
+                <li><a href="summer.html">Summer</a></li>
+                <li class="title">Services</li>
+                <li><a href="eatatmest.html">Eat at Mest</a></li>
+                <li><a href="wedding.html">Wedding</a> </li>
+                <li><a href="confirmation.html">Confirmation</a> </li>
+                <li class="title">Other</li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="red-column" >
+        <a href="index.html"><img src="assets/images/svalegaarden_logo_white.svg" alt="logo"></a>
+        <div class="content">
+            <h1>WELCOME!</h1>
+            <p>
+                Svalegaarden has been rebuilt in 1952 and been standing ever since. Today, it is the home of excellent gastronomy and welcomes everyone. The building provides a perfect atmosphere for events or any kind of occasions.
+            </p>
+
+            <p>
+                "Memorable experiences <br>
+                in historical surroundings."
+            </p>
+
+            <div  class="discover" ><a href="aboutus.html">Discover More</a></div>
+        </div>
+    </div>
+    <div class="button-column">
+        <div class="jump" id="arrow">
+            <a href="#info">
+                <img src="assets/images/arrow-down.png" alt="Down arrow"></a></div>
+    </div>
+    <div class="content-column"></div>
+
+
+    
+        
+    </header>
+
+
+    <!--- Main content Section --->
+
+    <main class="index-main" id="book">
+      
+        <div class="red-column">
+            
+            <div class="content">
+                <h1>Book a table here.</h1>  
+                <form>
+                <label for="start">Select a Date:</label>
+
+                <input type="date" id="start" name="book-a-table"
+                    value="2020-01-16"
+                    min="2020-01-01" max="2020-12-31">
+                
+                <label for="subject">Message</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+    
+
+                <button type="submit" >Submit</button>
+            </form>
+
+                                
+            </div>
+            <span class="arrow-down"></span>
+
+        </div>
+        <div class="button-column">
+
+            <div class="discover"><a href="eatatmest.html">Discover More</a></div>
+
+        </div>
+        <div class="content-column" id="info">
+
+            <div class="content">
+                <h1>The place where gastronomy meets rural idyll.</h1>
+                <p>
+                    You will find our wide selection of gastronomic flavors, which are composed from the best ingredients of the season. If you have a birthday, reception, wedding or christening, there is plenty of opportunity for us to put together just the menu you want. You are very welcome to review our menu.
+                </p>
+    
+                <div class="flex">
+                
+                <div class="discover-inside"><a href="eatatmest.html">Discover More</a></div>
+            
+            </div>
+            </div>
+
+        </div>     
+
+    </main>
+
+    <!-- Contact form base-->
+    <div class="contact-form" id="contact">
+
+        <h1>Contact Form</h1>
+
+        <div class="container">
+            <div class="fill">
+                <div>
+                    <label for="fname">Full Name</label>
+                    <input type="text" id="fname" name="fullname" placeholder="Your full name.">
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="e-mail" placeholder="Your E-mail address.">
+                </div>
+
+            </div>
+
+            <div>
+                <label for="topic">Topic you asking from.</label>
+                <select id="topic" name="topic-s">
+                    <option value="wedding">Wedding</option>
+                    <option value="catering">Catering</option>
+                    <option value="team-building">Team building</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."></textarea></div>
+
+                <button type="submit" >Submit</button>
+
+        </div>
+
+    </div>
+
+    
+    <!--- Footer --->
+
+    <footer>
+        <div class="map"><img src="assets/images/map.png" alt=""></div>
+        <div class="contact">
+            Svalegaarden Mest <br>
+            Einar Packness Vej 2<br>
+            9000 Aalborg<br>
+            <hr>
+            KITCHEN: +45 51 90 55 54<br>
+            ADMINISTRATION: +45 98 13 50 53<br>
+            <a href="mailto:info@svalegaarden-mest.dk" target="_top">info@svalegaarden-mest.dk</a>
+        </div>
+        <div class="sites">
+
+           <a href="index.html"> <img src="assets/images/svalegaarden_logo_white.svg" alt="logo"></a>
+            <div> 
+            <a href="https://www.instagram.com/svalegaardenmest/"><img src="assets/images/instagram_icon.png" alt="instagram"></a>
+           <a href="https://www.facebook.com/SvalegaardenMEST/"> <img src="assets/images/facebook_icon.png" alt="facebook"></a>
+            </div>
+           
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
