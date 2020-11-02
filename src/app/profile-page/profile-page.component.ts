@@ -16,8 +16,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 	public touchStartListener;
 	public touchMovedListener;
 	public startEvent: TouchEvent;
+
 	public onAboutMe = true;
-	public onIpadPro = true;
 
 	constructor(
 		private renderer: Renderer2,
@@ -26,7 +26,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
 		this.listener = this.renderer.listen('window', 'wheel', (e) => {
 
-			console.log(e);
+			// console.log(e);
 
 			if (e.wheelDelta < 0 && this.onAboutMe) {
 				this.router.navigate(['profile/skills']);
@@ -38,36 +38,33 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 			}
 		});
 
-		this.touchStartListener = this.renderer.listen('window', 'touchstart', (e: TouchEvent) => {
-			this.startEvent = e;
-			console.log(this.startEvent);
-		});
+		// this.touchStartListener = this.renderer.listen('window', 'touchstart', (e: TouchEvent) => {
+		// 	this.startEvent = e;
+		// 	console.log(this.startEvent);
+		// });
 
-		this.touchMovedListener = this.renderer.listen('window', 'touchmove', (e: TouchEvent) => {
+		// this.touchMovedListener = this.renderer.listen('window', 'touchmove', (e: TouchEvent) => {
 
-			if ((e.changedTouches[0].clientY < this.startEvent.changedTouches[0].clientY) && this.onAboutMe) {
-				this.router.navigate(['profile/skills']);
-				this.onAboutMe = false;
-			}
-			if ((e.changedTouches[0].clientY > this.startEvent.changedTouches[0].clientY) && !this.onAboutMe) {
-				this.router.navigate(['/profile']);
-				this.onAboutMe = true;
-			}
+		// 	if ((e.changedTouches[0].clientY < this.startEvent.changedTouches[0].clientY) && this.onAboutMe) {
+		// 		this.router.navigate(['profile/skills']);
+		// 		this.onAboutMe = false;
+		// 	}
+		// 	if ((e.changedTouches[0].clientY > this.startEvent.changedTouches[0].clientY) && !this.onAboutMe) {
+		// 		this.router.navigate(['/profile']);
+		// 		this.onAboutMe = true;
+		// 	}
 
-		});
+		// });
 	}
 
-	// public getYPosition(e: Event): number {
-	// 	return (e.target as Element).scrollTop;
-	// }
 
 	public ngOnDestroy(): void {
-		this.touchStartListener();
-		this.touchMovedListener();
-
+		// this.touchStartListener();
+		// this.touchMovedListener();
+		this.listener();
 	}
 
-	public ngOnInit(): void {}
+	public ngOnInit(): void { }
 
 	public getState(outlet: RouterOutlet) {
 		return outlet.activatedRouteData.state;
