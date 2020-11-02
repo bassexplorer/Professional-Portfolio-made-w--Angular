@@ -7,7 +7,7 @@
 
 		<div class="menu-container text-muted">
 
-			<h2>Menu</h2>
+			<h2 class="text-center">Menu</h2>
 			<mat-divider color="primary"></mat-divider>
 
 			<div class="d-flex flex-column">
@@ -15,34 +15,60 @@
 				<a class="nav_link"
 				   mat-button
 				   routerLinkActive="active"
+				   (click)="drawer.close()"
 				   routerLinkActive="active"
 				   [routerLinkActiveOptions]="{exact: true}"
 				   routerLink='/'>Home</a>
 
 				<a class="nav_link"
 				   mat-button
+				   (click)="drawer.close()"
 				   routerLinkActive="active"
 				   routerLink='/profile'> Profile</a>
 
 				<a class="nav_link"
 				   mat-button
+				   (click)="drawer.close()"
 				   routerLinkActive="active"
 				   routerLink='/profile/skills'> Skills & Tools</a>
 
 				<a class="nav_link"
 				   mat-button
+				   (click)="drawer.close()"
 				   routerLinkActive="active"
 				   routerLink='/projects'>Projects</a>
 
 				<a class="contact-btn-style"
 				   mat-button
+				   (click)="drawer.close()"
 				   routerLinkActive="active"
 				   routerLink='/contact'>Contact</a>
 
-				<div class="overflow-hidden">
+				<div class="overflow-hidden py-2 px-3 my-3 border border-white rounded">
 					<span class="mode-indicator pr-3">Dark Mode</span>
 					<mat-slide-toggle appDarkModeSwitch></mat-slide-toggle>
 				</div>
+			</div>
+
+			<div class="social-box d-flex justify-content-center">
+				<a mat-icon-button
+				   matTooltip="Professional LinkedIn"
+				   matTooltipPosition="left"
+				   matTooltipHideDelay="100"
+				   href="https://www.linkedin.com/in/mark-bence-kiss/"
+				   target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a mat-icon-button
+				   matTooltip="Personal Stuffs"
+				   matTooltipPosition="left"
+				   matTooltipHideDelay="100"
+				   href="https://www.instagram.com/bassexplorer.beni/"
+				   target="_blank"><i class="fab fa-instagram"></i></a>
+				<a mat-icon-button
+				   matTooltip="My Code Projects"
+				   matTooltipPosition="left"
+				   matTooltipHideDelay="100"
+				   href="https://github.com/bassexplorer"
+				   target="_blank"><i class="fab fa-github"></i></a>
 			</div>
 
 
