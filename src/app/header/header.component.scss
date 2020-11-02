@@ -26,7 +26,8 @@ mat-toolbar {
 
 
     .nav_link {
-        margin: .5rem;
+		margin: .5rem;
+		text-decoration: none;
 
 
         &::before,
@@ -72,6 +73,7 @@ mat-toolbar {
         border: 1px solid;
         border-radius: 0;
         overflow: hidden;
+		text-decoration: none;
         position: relative;
 
         span {

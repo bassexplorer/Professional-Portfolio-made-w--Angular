@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { MatDrawerContainer } from '@angular/material/sidenav';
 import { MatToolbar } from '@angular/material/toolbar';
 import { NavigationEnd, Router } from '@angular/router';
@@ -17,8 +17,9 @@ import { DrawerService } from './drawer.service';
 export class HeaderComponent implements OnInit {
 
 	public onHome: string;
-	public onIpadPro: boolean
+	public onIpadPro: boolean;
 	public onDrawerToggle = false;
+	@Input() public currentPage: string;
 	@ViewChild('drawerContainer', { static: true }) public drawerContainer: MatDrawerContainer;
 	@ViewChild(MatToolbar, { static: true }) public matToolbar: MatToolbar;
 	constructor(
@@ -61,6 +62,7 @@ export class HeaderComponent implements OnInit {
 
 			}
 
+
 		});
 	}
 
@@ -70,16 +72,14 @@ export class HeaderComponent implements OnInit {
 	}
 
 
-	// @HostListener('window:scroll', ['$event']) public onScroll(event: Event) {
+	@HostListener('window:scroll', ['$event']) public onScroll(event: Event) {
 
-	// 	if (pageYOffset > 100) {
+		if (pageYOffset > 50) {
+			this.renderer.addClass(this.matToolbar._elementRef.nativeElement, 'scrolled');
 
-	// 		this.renderer.addClass(this.matToolbar._elementRef.nativeElement, 'scrolled');
-
-
-	// 	} else {
-	// 		this.renderer.removeClass(this.matToolbar._elementRef.nativeElement, 'scrolled');
-	// 	}
-	// }
+		} else {
+			this.renderer.removeClass(this.matToolbar._elementRef.nativeElement, 'scrolled');
+		}
+	}
 
 }
