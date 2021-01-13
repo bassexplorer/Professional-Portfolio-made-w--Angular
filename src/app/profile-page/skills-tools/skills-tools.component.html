@@ -1,15 +1,18 @@
-<div class="section2 h-100 d-flex flex-column .bg-transparent justify-content-center align-items-center" [ngClass]="{'onIpad': breakpointObs$ | async}">
+<div class="section2 h-100 d-flex flex-column .bg-transparent justify-content-center align-items-center"
+	 [ngClass]="{'onIpad': breakpointObs$ | async}">
 
 	<div class="h-100 main-content row my-auto">
 
-		<div class="text-box p-5 my-auto mx-auto particles-shadow aligning-bg-n-text user-select-none col-12 col-sm-9 col-xl-6">
-			<h1 >Technical Knowledge</h1>
+		<div
+			 class="text-box p-5 my-auto mx-auto particles-shadow aligning-bg-n-text user-select-none col-12 col-sm-9 col-xl-6">
+			<h1>Technical Knowledge</h1>
 
 			<p class="par"> I started using CSS and HTML 5 years ago and since then, I have been using
 				them in every project of my
 				own.
 				I always try to make my projects more usable and interesting by bringing them to life with JavaScript.
-				I also love to use Photoshop to correct images and align them to perfectly fit into a project.</p>
+				I love to use Photoshop to correct images and align them to perfectly fit into a project.
+				Sometimes I create SVGs with Illustrator to give more movement or functionality to a website.</p>
 
 			<p class="par"> At the beginning of 2020 I realized I am more interested in Front-end
 				development, so I jumped into the
@@ -21,12 +24,24 @@
 			<p class="par">This time has been really beneficial for me. I was able to learn new
 				technologies such as using Bootstrap and applying Material Design beside Typescript and Angular.</p>
 
-			<p class="par"> After the lockdown was over I got back to  school and I got a strong grasp
-				and understanding of Back-end development by creating my first API with MSSQL and Express called "Student Feedback"</p>
+			<p class="par"> After the lockdown was over I got back to school and I got a strong grasp
+				and understanding of Back-end development by creating my first API with MSSQL and Express.</p>
 
-			<p class="par"> Since lots of projects contains a lot of bug and maybe separate version I
-				also started to learn version
-				control by using GitHub(through Git-bash).</p>
+			<p class="par"> Since lots of projects contains a lot of bug and maybe separate versions I
+				also started to dig myself deeper in version
+				control by learning to use GitHub(through Git-bash).</p>
+
+			<p class="par">2020 went by fast and I had to choose a tech stack for our exam project.
+				For the front-end I chose Vue and the material framework Vuetify to help me build the app faster.
+				Because
+				I wanted to learn more and experience how I can build a full stack app, so I decided to create a database
+				too.
+				For the backend I chose Firebase. I used the authentication and the Firestore to store data in the
+				background.
+				I also decided to use Vuexfire to make my life easier when I connect the database with the front-end.
+			</p>
+
+
 		</div>
 
 
@@ -35,8 +50,9 @@
 	</div>
 	<app-copyright class="mt-auto mx-auto"></app-copyright>
 
-	<Particles id="tsparticles" class="d-none d-sm-none d-md-flex  d-lg-flex"
-	[options]="particlesOptions">
+	<Particles id="tsparticles"
+			   class="d-none d-sm-none d-md-flex  d-lg-flex"
+			   [options]="particlesOptions">
 	</Particles>
 
 </div>

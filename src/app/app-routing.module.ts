@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ContactPageComponent } from './contact-page/contact-page.component';
+// import { ContactPageComponent } from './contact-page/contact-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutMeComponent } from './profile-page/about-me/about-me.component';
@@ -27,7 +27,7 @@ const routes: Routes = [
 		path: 'projects', component: ProjectsPageComponent, data: { state: 'projects', pageTitle: 'Projects' },
 	},
 	{ path: 'projects/:caseName', component: ProjectCaseComponent, data: { state: 'case-studies', pageTitle: 'Case Study' } },
-	{ path: 'contact', component: ContactPageComponent, data: { state: 'contact', pageTitle: 'Contact' } },
+	// { path: 'contact', component: ContactPageComponent, data: { state: 'contact', pageTitle: 'Contact' } },
 
 
 	{ path: 'page-not-found', component: PageNotFoundComponent, data: { state: 'notfound', pageTitle: 'Page Not Found' } },

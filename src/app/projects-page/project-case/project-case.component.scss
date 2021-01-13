@@ -5,19 +5,21 @@
     }
 
     .red-shape {
-        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+		// clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+		clip-path: polygon(0 0%, 100% 20%, 100% 80%, 0 100%);
         background-color: #500909;
         padding: 10vh 0 !important;
 
         @media (max-width: 768px) {
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+            // clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+            clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0 100%);
 
         }
     }
 
 
 
-	@media (max-width: 1024px) {
+    @media (max-width: 1024px) {
 
         h1 {
             font-size: 6vw !important;
@@ -29,19 +31,19 @@
 
         h3 {
             font-size: 3vw !important;
-		}
+        }
 
-		p{
-			font-size: 3vw;
-		}
+        p {
+            font-size: 3vw;
+        }
 
-		.icon-box a {
-			font-size: 2.5rem;
-		}
+        .icon-box a {
+            font-size: 2.5rem;
+        }
 
-	}
+    }
 
-	@media (max-width: 576px) {
+    @media (max-width: 576px) {
 
         h1 {
             font-size: 8vw !important;
@@ -53,19 +55,19 @@
 
         h3 {
             font-size: 8vw !important;
-		}
+        }
 
-		p{
-			font-size: 4vw;
-		}
+        p {
+            font-size: 4vw;
+        }
 
-		.icon-box a {
-			font-size: 3rem;
-		}
-	}
+        .icon-box a {
+            font-size: 3rem;
+        }
+    }
 
     .problem {
-        mix-blend-mode: screen;
+        filter: invert(1);
     }
 
     .solution {

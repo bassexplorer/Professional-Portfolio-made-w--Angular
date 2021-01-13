@@ -22,6 +22,28 @@ export interface ProjectSchema {
 
 }
 export const projectsArray: ProjectSchema[] = [
+
+	{
+		caseCode: 'beka_eco_packaging',
+		title: 'BEKA Eco-Packaging',
+		companyDesc: 'BEKA Eco-Packaging (Beka Csomagolás) is a small business that sells handmade fabric products mainly reusable packaging. Their goal is to encorage people to be more aware and try to push back the usage of plastic in any case.',
+		responsiveViewImg: '../../../assets/images/products/frame-5.png',
+		problem: 'They had a simpler and static website where they had to call the developer if something changed or they wanted to add new products. Even when the users wanted to make purchases, they had to contact the company by e-mail as there was no web shop available. Due to the pandemic, they haven\'t been able to go to fairs and sell their products in real life. With the new solution, they wished to grow their bussiness by their presence in the online world and be able to sell products online through a webshop.',
+		restriction: 'There was a limited amount of time to realize the project due to them wanting to publish the site before christmas.',
+		solution: 'I chose Wordpress as a Content Management System, since the product needed to be easily changeable and manageable by the client. The solution was a wordpress site that I built myself from a blank bootstrap theme and modified according to the project\'s needs. While creating the webshop, I used woocomerce and a couple of supporting plugins. I also used PHP to create and manage the needed page templates and Jquery to implement a couple of functionalities',
+		technologies: ['HTML', 'CSS', 'JQuery', 'Bootstrap', 'WooComerce', 'PHP'],
+		features: ['Responsive Design', 'Functional Webshop', 'Easy to update', 'More Manageable'],
+		myRole: ['Plan the process', 'Prepare visual materials', 'Split the tasks', 'Realize the product', 'Find & Resolve bugs'],
+
+		cardImgUrl: '../../assets/images/products/project-5.jpg',
+		cardShortDesc: 'A small bussines that sells handmade fabric products mainly reusable packaging for people who would like to make a difference.',
+
+		links: {
+			githubLink: '',
+			liveDemo: 'https://bekacsomagolas.hu/',
+			caseLink: '/projects/beka_eco_packaging',
+		}
+	},
 	{
 		caseCode: 'dyreterapi',
 		title: 'Center for Dyreterapi',
@@ -87,7 +109,7 @@ export const projectsArray: ProjectSchema[] = [
 		restriction: '',
 		solution: 'This project was the first that introduced me to the idea of one page applications. In this project I also learned that how I can manipulate the DOM in a more advance way and the more  of Javascript.',
 		technologies: ['HTML', 'CSS', 'Vanilla - JavaScript', 'Github'],
-		features: [''],
+		features: ['Responsive Design',],
 		myRole: [
 			'Refining mock-ups',
 			'Prepare visual material',
@@ -129,5 +151,5 @@ export const projectsArray: ProjectSchema[] = [
 			liveDemo: '../../../assets/live-demos/svalegaarden-mest-catering/index.html',
 			caseLink: '/projects/svalegaarden_mest',
 		}
-	},
+	}
 ];
